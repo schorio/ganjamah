@@ -41,6 +41,8 @@
 		
 		<!-- Main CSS -->
         <link rel="stylesheet" href="../assets/css/style.css">
+
+		<link rel="stylesheet" href="../assets/css/metro-all.min.css">
 		
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
@@ -77,7 +79,7 @@
 								</ul>
 							</div>
 							<div class="col-auto float-right ml-auto">
-								<a href="#" class="btn add-btn" data-toggle="modal" data-target="#ajouter_restaurant"><i class="fa fa-plus"></i> Ajouter un restaurant</a>
+								<a href="#" class="btn add-btn" data-toggle="modal" data-target="#ajouter_restaurant"><i class="fa fa-plus"></i> Restaurant </a>
 								
 							</div>
 						</div>
@@ -127,7 +129,8 @@
 									</div>
 								<div>
 									<h4 class="user-name m-t-10 mb-0 text-ellipsis"><?php echo htmlentities($row->nom_resto); ?></h4>
-									<h6 class="user-name text-ellipsis"><?php echo htmlentities($row->adresse_resto); ?></h6>
+									<h6 class="user-name text-muted"><?php echo htmlentities($row->adresse_resto); ?></h6>
+									<input data-role="rating" data-value="<?php echo htmlentities($row->note_resto); ?>">
 								</div>
 								<div class="small text-muted" style="font-weight: 500">
 									<?php echo $adresse_resto ?>
@@ -182,7 +185,7 @@
 		<!-- Recherche instantannée -->
 		<script src="../assets/js/recherche.js"></script>
 
-
+		<script src="../assets/js/metro.min.js"></script>
 		
 		
     </body>

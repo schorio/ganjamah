@@ -1,15 +1,10 @@
-﻿<?php 
+<?php 
 	session_start();
 	error_reporting(0);
 	include_once('../includes/config.php');
-	// include_once("../includes/functions.php");
-	include_once("../includes/function/f_hotel.php");
+	include_once('../includes/function/f_blog.php');
 
-	if(strlen($_SESSION['userlogin'])==0)
-	{
-		header('location: ../login.php');
-	}
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,10 +14,10 @@
 		<meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
         <meta name="author" content="Dreamguys - Bootstrap Admin Template">
         <meta name="robots" content="noindex, nofollow">
-        <title> Listes des Hotel</title>
+        <title>Blog</title>
 		
 		<!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="../assets/img/ganjamah.png">
+        <link rel="shortcut icon" type="image/x-icon" href="../assets/img/logo.png">
 		
 		<!-- Bootstrap CSS -->
         <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
@@ -41,12 +36,6 @@
 		
 		<!-- Main CSS -->
         <link rel="stylesheet" href="../assets/css/style.css">
-
-		<link rel="stylesheet" href="../assets/css/metro-all.min.css">
-
-		<!-- Main CSS -->
-        <!-- <link rel="stylesheet" href="../assets/css/test.css"> -->
-		
 		
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
@@ -76,16 +65,15 @@
 					<div class="page-header">
 						<div class="row align-items-center">
 							<div class="col">
-								<h3 class="page-title">Hotel</h3>
+								<h3 class="page-title">Blog</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="hotel.php">Listes</a></li>
-									<li class="breadcrumb-item active">Listes des Hotel</li>
+								<li class="breadcrumb-item">Listes</li>
+									<li class="breadcrumb-item active"><a href="">Listes des blogs</a></li>
 								</ul>
 							</div>
-							<div class="col-auto float-right ml-auto">
-								<a href="#" class="btn add-btn" data-toggle="modal" data-target="#ajouter_hotel"><i class="fa fa-plus"></i> Hotel </a>
-								
-							</div>
+								<div class="col-auto float-right ml-auto">
+									<a href="#" class="btn add-btn" data-toggle="modal" data-target="#ajouter_blog"><i class="fa fa-plus"></i> Blog </a>
+								</div>
 						</div>
 					</div>
 					<!-- /Page Header -->
@@ -100,65 +88,70 @@
 						</div>
                     </div>
 					<!-- Search Filter -->
-
+					
 					<!-- user profiles list starts her -->
-					<div class="row staff-grid-row">
+					<div class="row">
+								<?php
+										$sql = "SELECT * from blog";
 
-						<?php
-
-							$sql = "SELECT * from hotel";
-
-							$query = $dbh->prepare($sql);
-							$query->execute();
-							
-							while ($row = $query->fetch(PDO::FETCH_ASSOC))
-							{	
+										$query = $dbh->prepare($sql);
+										$query->execute();
+										
+										while ($row = $query->fetch(PDO::FETCH_ASSOC))
+										{	
+											$DATE_BLOG = date('Y-m-d', strtotime($row['DATE_BLOG']));
 											
-						?>
-						<div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
-							<div class="profile-widget">
-								<div class="profile-img">
-									<!-- <a href="/ganjamah/profile.php?id=<php echo $id_hotel ?>" class="avatar"><img src="/ganjamah/assets/img/hotel/<php echo $image_hotel ?>" alt="image"></a> -->
-									<a href="#"data-toggle="modal" data-target="#voir_hotel_<?php echo $row['ID_HOTEL']; ?>" class="avatar"><img src="/ganjamah/assets/img/hotel/<?php echo $row['IMAGE_HOTEL']; ?>" alt="image"></a>
-								</div>
-									<div class="dropdown profile-action">
-										<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-										<div class="dropdown-menu dropdown-menu-right">
-											<a class="dropdown-item" href="#" data-toggle="modal" data-target="#modifier_hotel_<?php echo $row['ID_HOTEL']; ?>"><i class="fa fa-pencil m-r-5"></i> Modifier</a>
-											<a class="dropdown-item" href="#" data-toggle="modal" data-target="#supprimer_hotel_<?php echo $row['ID_HOTEL']; ?>"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
+									?>
+								<div class="col-lg-4 col-sm-6 col-12 col-md-4 col-xl-3">
+									<div class="card">
+										<div class="card-body">
+
+											<div class="dropdown dropdown-action profile-action">
+												<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+												<div class="dropdown-menu dropdown-menu-right">
+													<a class="dropdown-item" href="#" data-toggle="modal" data-target="#modifier_blog_<?php echo $row['ID_BLOG']; ?>"><i class="fa fa-pencil m-r-5"></i> Modifier</a>
+													<a class="dropdown-item" href="#" data-toggle="modal" data-target="#supprimer_blog_<?php echo $row['ID_BLOG']; ?>"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
+												</div>
+											</div>
+											
+											<h3 class="project-title">
+												<a href="" data-toggle="modal" data-target="#voir_blog_<?php echo $row['ID_BLOG']; ?>">
+												<?php echo $row['TITRE_BLOG']; ?>
+												</a>
+											</h3>
+											<small class="block text-ellipsis m-b-15">
+											<span class="text-xs">par </span><span class="text-muted"><?php echo $row['AUTEUR_BLOG']; ?></span>
+											</small><br>
+											<p>
+												<h4><span class="text-muted"><?php echo $row['DOMAINE_BLOG']; ?></span></h4>
+												<h4>
+												<?php echo $row['DATE_BLOG']; ?>
+												</h4>
+											</p>
+
 										</div>
 									</div>
-								<div>
-									<h4 class="user-name m-t-10 mb-0 text-ellipsis"><?php echo $row['NOM_HOTEL']; ?></h4>
-									<h6 class="user-name text-muted"><?php echo $row['ADRESSE_HOTEL']; ?></h6>
-									<input data-role="rating" data-value="<?php echo $row['NOTE_HOTEL']; ?>">
-								</div>
-								<div class="small text-muted" style="font-weight: 500">
-									<?php echo $adresse_hotel ?>
-								</div>
-							</div>
-						</div>	
+								</div>	
 						<?php
 						
-						include("../includes/modals/hotel/supprimer_hotel.php");
-						include("../includes/modals/hotel/voir_hotel.php");
-						include("../includes/modals/hotel/modifier_hotel.php");
-						
-						}
-						?>		
+						include("../includes/modals/blog/supprimer_blog.php");
+						include("../includes/modals/blog/modifier_blog.php");
+						include("../includes/modals/blog/voir_blog.php");
+
+   							}
+    					?>		
 					</div>
 
-    			</div>
+                </div>
 				<!-- /Page Content -->
 				
-				<!-- Add hotel Modal -->
-				<?php include_once("../includes/modals/hotel/ajouter_hotel.php"); ?>
-				<!-- /Add hotel Modal -->
+				<!-- Add blog Modal -->
+				<?php include_once("../includes/modals/blog/ajouter_blog.php");?>
+				<!-- /Add blog Modal -->
 				
-		
             </div>
 			<!-- /Page Wrapper -->
-			
+
         </div>
 		<!-- /Main Wrapper -->
 		
@@ -179,14 +172,16 @@
 		<script src="../assets/js/moment.min.js"></script>
 		<script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
 		
+        <!-- Datatable JS -->
+        <script src="../assets/js/jquery.dataTables.min.js"></script>
+		<script src="../assets/js/dataTables.bootstrap4.min.js"></script>
+
 		<!-- Custom JS -->
 		<script src="../assets/js/app.js"></script>
 		
+
 		<!-- Recherche instantannée -->
 		<script src="../assets/js/recherche.js"></script>
-
-		<script src="../assets/js/metro.min.js"></script>
-		
 		
     </body>
 </html>

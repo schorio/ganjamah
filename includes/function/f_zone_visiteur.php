@@ -10,7 +10,7 @@ if(isset($_POST['ajouter_zone'])){
     //grabbing the picture
 		$file = $_FILES['image']['name'];
 		$file_loc = $_FILES['image']['tmp_name'];
-		$folder="../assets/img/zone/"; 
+		$folder="../assets/img/zone visiteur/"; 
 		$new_file_name = strtolower($file);
 		$final_file=str_replace(' ','-',$new_file_name);
 
@@ -68,7 +68,7 @@ if(isset($_POST['modifier_zone'])){
     //grabbing the picture
     $file = $_FILES['n_image']['name'];
     $file_loc = $_FILES['n_image']['tmp_name'];
-    $folder="../assets/img/zone/";
+    $folder="../assets/img/zone visiteur/";
     $new_file_name = strtolower($file);
     $final_file=str_replace(' ','-',$new_file_name);
 

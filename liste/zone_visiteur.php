@@ -1,9 +1,9 @@
-﻿<?php 
+<?php 
 	session_start();
 	error_reporting(0);
 	include_once('../includes/config.php');
 	// include_once("../includes/functions.php");
-	include_once("../includes/function/f_hotel.php");
+	include_once("../includes/function/f_zone_visiteur.php");
 
 	if(strlen($_SESSION['userlogin'])==0)
 	{
@@ -19,7 +19,7 @@
 		<meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
         <meta name="author" content="Dreamguys - Bootstrap Admin Template">
         <meta name="robots" content="noindex, nofollow">
-        <title> Listes des Hotel</title>
+        <title>Zone visiteur</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="../assets/img/ganjamah.png">
@@ -43,10 +43,6 @@
         <link rel="stylesheet" href="../assets/css/style.css">
 
 		<link rel="stylesheet" href="../assets/css/metro-all.min.css">
-
-		<!-- Main CSS -->
-        <!-- <link rel="stylesheet" href="../assets/css/test.css"> -->
-		
 		
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
@@ -76,14 +72,14 @@
 					<div class="page-header">
 						<div class="row align-items-center">
 							<div class="col">
-								<h3 class="page-title">Hotel</h3>
+								<h3 class="page-title">Zone visiteur</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="hotel.php">Listes</a></li>
-									<li class="breadcrumb-item active">Listes des Hotel</li>
+									<li class="breadcrumb-item"><a href="zone.php">Listes</a></li>
+									<li class="breadcrumb-item active">Listes des zone visiteur</li>
 								</ul>
 							</div>
 							<div class="col-auto float-right ml-auto">
-								<a href="#" class="btn add-btn" data-toggle="modal" data-target="#ajouter_hotel"><i class="fa fa-plus"></i> Hotel </a>
+								<a href="#" class="btn add-btn" data-toggle="modal" data-target="#ajouter_zone_visiteur"><i class="fa fa-plus"></i> Zone visiteur </a>
 								
 							</div>
 						</div>
@@ -106,54 +102,58 @@
 
 						<?php
 
-							$sql = "SELECT * from hotel";
+							$sql = "SELECT * from zone_visiteur";
 
 							$query = $dbh->prepare($sql);
 							$query->execute();
-							
-							while ($row = $query->fetch(PDO::FETCH_ASSOC))
-							{	
+							$results=$query->fetchAll(PDO::FETCH_OBJ);
+							$cnt=1;
+							if($query->rowCount() > 0)
+							{
+								foreach($results as $row)
+								{	
 											
 						?>
 						<div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
 							<div class="profile-widget">
 								<div class="profile-img">
-									<!-- <a href="/ganjamah/profile.php?id=<php echo $id_hotel ?>" class="avatar"><img src="/ganjamah/assets/img/hotel/<php echo $image_hotel ?>" alt="image"></a> -->
-									<a href="#"data-toggle="modal" data-target="#voir_hotel_<?php echo $row['ID_HOTEL']; ?>" class="avatar"><img src="/ganjamah/assets/img/hotel/<?php echo $row['IMAGE_HOTEL']; ?>" alt="image"></a>
+									<!-- <a href="/ganjamah/profile.php?id=<php echo $id_zone ?>" class="avatar"><img src="/ganjamah/assets/img/zone/<php echo $image_zone ?>" alt="image"></a> -->
+									<a href="#"data-toggle="modal" data-target="#voir_zone_visiteur_<?php echo htmlentities($row->id_zone); ?>" class="avatar"><img src="/ganjamah/assets/img/zone visiteur/<?php echo htmlentities($row->image_zone); ?>" alt="image"></a>
 								</div>
 									<div class="dropdown profile-action">
 										<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 										<div class="dropdown-menu dropdown-menu-right">
-											<a class="dropdown-item" href="#" data-toggle="modal" data-target="#modifier_hotel_<?php echo $row['ID_HOTEL']; ?>"><i class="fa fa-pencil m-r-5"></i> Modifier</a>
-											<a class="dropdown-item" href="#" data-toggle="modal" data-target="#supprimer_hotel_<?php echo $row['ID_HOTEL']; ?>"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
+											<a class="dropdown-item" href="#" data-toggle="modal" data-target="#modifier_zone_visiteur_<?php echo htmlentities($row->id_zone); ?>"><i class="fa fa-pencil m-r-5"></i> Modifier</a>
+											<a class="dropdown-item" href="#" data-toggle="modal" data-target="#supprimer_zone_visiteur_<?php echo htmlentities($row->id_zone); ?>"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
 										</div>
 									</div>
 								<div>
-									<h4 class="user-name m-t-10 mb-0 text-ellipsis"><?php echo $row['NOM_HOTEL']; ?></h4>
-									<h6 class="user-name text-muted"><?php echo $row['ADRESSE_HOTEL']; ?></h6>
-									<input data-role="rating" data-value="<?php echo $row['NOTE_HOTEL']; ?>">
+									<h4 class="user-name m-t-10 mb-0 text-ellipsis"><?php echo htmlentities($row->nom_zone); ?></h4>
+									<h6 class="user-name text-ellipsis"><?php echo htmlentities($row->adresse_zone); ?></h6>
+									<input data-role="rating" data-value="<?php echo htmlentities($row->note_zone); ?>">
 								</div>
 								<div class="small text-muted" style="font-weight: 500">
-									<?php echo $adresse_hotel ?>
+									<?php echo $adresse_zone ?>
 								</div>
 							</div>
 						</div>	
 						<?php
 						
-						include("../includes/modals/hotel/supprimer_hotel.php");
-						include("../includes/modals/hotel/voir_hotel.php");
-						include("../includes/modals/hotel/modifier_hotel.php");
-						
-						}
+						include("../includes/modals/zone visiteur/supprimer_zone_visiteur.php");
+						include("../includes/modals/zone visiteur/voir_zone_visiteur.php");
+						include("../includes/modals/zone visiteur/modifier_zone_visiteur.php");
+								}
+						$cnt +=1; 
+							}
 						?>		
 					</div>
 
     			</div>
 				<!-- /Page Content -->
 				
-				<!-- Add hotel Modal -->
-				<?php include_once("../includes/modals/hotel/ajouter_hotel.php"); ?>
-				<!-- /Add hotel Modal -->
+				<!-- Add zone Modal -->
+				<?php include_once("../includes/modals/zone visiteur/ajouter_zone_visiteur.php"); ?>
+				<!-- /Add zone Modal -->
 				
 		
             </div>

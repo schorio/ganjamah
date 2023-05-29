@@ -12,55 +12,26 @@ $id = substr(str_shuffle($set), 0, 6);
 				</button>
 			</div>
 
-			<div class="modal-body">
-                <!-- <div class="row">
-                    <div class="col-md-12"> -->
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="profile-img-wrap">
-                                    <div class="profile-img">
-                                        <a href="#"><img alt="" src="/ganjamah/assets/img/restaurant/<?php echo htmlentities($row->image_resto); ?>"></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="profile-basic">
-                                    <div class="row">
-                                        
-                                        <div class="col-md-7">
-                                            <ul class="personal-info">
-                                                <li>
-                                                    <div class="title">Nom :</div>
-                                                    <div class="text"><?php echo htmlentities($row->nom_resto); ?><a href=""></a></div>
-                                                </li>
-                                                <li>
-                                                    <div class="title">Note :</div>
-                                                    <div class="number"><?php echo htmlentities($row->note_resto); ?><a href=""></a></div>
-                                                </li>
-                                                <li>
-                                                    <div class="title">Adresse :</div>
-                                                    <div class="text"><?php echo htmlentities($row->adresse_resto); ?></div>
-                                                </li>
-                                                <li>
-                                                    <div class="title">Contact :</div>
-                                                    <div class="number"><?php echo htmlentities($row->contact_resto); ?></div>
-                                                </li>
-                                                <li>
-                                                    <div class="title">Description :</div>
-                                                    <div class="text"><?php echo htmlentities($row->description_resto); ?></div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="pro-edit"><a class="edit-icon" href="#"><i class="fa fa-pencil"></i></a></div>
-                            </div>
-                            
-                        </div>
-                    <!-- </div>
-                </div> -->
-			</div>
+			<div class="modal-body row">
+                <div class="col-12 col-lg-6 voir"> 
+					<img src="/ganjamah/assets/img/restaurant/<?php echo htmlentities($row->image_resto); ?>"> 
+				</div>
+                <div class="col-12 col-lg-6">
+					<h2><?php echo htmlentities($row->nom_resto); ?></h2>
+
+					<input data-role="rating" data-value="<?php echo htmlentities($row->note_resto); ?>">
+
+					<br>
+						<span class="text-muted"><?php echo htmlentities($row->adresse_resto); ?></span>
+					<br>
+						<span class="text-xs">0<?php echo htmlentities($row->contact_resto); ?></span>
+
+					<p class="form-group mt-3 pt-3">
+						<?php echo htmlentities($row->description_resto); ?>
+					</p>
+                </div>
+            </div>
+
 		</div>
 	</div>
 </div>
-

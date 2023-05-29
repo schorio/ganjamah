@@ -2075,6 +2075,13 @@ table.dataTable thead > tr > td.sorting {
     height: 270px;
     width: 270px;
 }
+
+.voir img {
+    border-radius: 20%;
+    height: 100%;
+    width: 100%;
+}
+
 .fileupload.btn {
 	position: absolute;
 	right: 0;
