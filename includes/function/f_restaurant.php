@@ -7,13 +7,6 @@ if(isset($_POST['ajouter_resto'])){
                     VALUES  (RESTAURANT_SEQUENCE.nextval, :nom_resto,  :note_resto,  :adresse_resto,  :contact_resto,  :description_resto, :image_resto)";
         $query = $dbh->prepare($sql);
 
-        // $id_resto = '8';
-        $nom_resto = htmlspecialchars($_POST['nom_resto']);
-        $note_resto = htmlspecialchars($_POST['note_resto']);
-        $adresse_resto = htmlspecialchars($_POST['adresse_resto']);
-        $contact_resto = htmlspecialchars($_POST['contact_resto']);
-        $description_resto = htmlspecialchars($_POST['description_resto']);
-
         //grabbing the picture
 		$file = $_FILES['image_resto']['name'];
 		$file_loc = $_FILES['image_resto']['tmp_name'];
@@ -26,11 +19,11 @@ if(isset($_POST['ajouter_resto'])){
 		}
 
         // $query->bindParam(':id_resto',$id_resto);
-        $query->bindParam(':nom_resto',$nom_resto);
-        $query->bindParam(':note_resto',$note_resto);
-        $query->bindParam(':adresse_resto',$adresse_resto);
-        $query->bindParam(':contact_resto',$contact_resto);
-        $query->bindParam(':description_resto',$description_resto);
+        $query->bindParam(':nom_resto',$_POST['nom_resto']);
+        $query->bindParam(':note_resto',$_POST['note_resto']);
+        $query->bindParam(':adresse_resto',$_POST['adresse_resto']);
+        $query->bindParam(':contact_resto',$_POST['contact_resto']);
+        $query->bindParam(':description_resto',$_POST['description_resto']);
         $query->bindParam(':image_resto',$image_resto);
         $query->execute();
         
