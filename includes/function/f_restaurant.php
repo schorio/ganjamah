@@ -58,48 +58,56 @@ if(isset($_POST['supprimer_resto'])){
 
 if(isset($_POST['modifier_resto'])){
 
-    $id_resto = htmlspecialchars($_POST['id_resto']);
-    $n_nom_resto = htmlspecialchars($_POST['n_nom_resto']);
-    $n_note_resto = htmlspecialchars($_POST['n_note_resto']);
-    $n_adresse_resto = htmlspecialchars($_POST['n_adresse_resto']);
-    $n_contact_resto = htmlspecialchars($_POST['n_contact_resto']);
-    $n_description_resto = htmlspecialchars($_POST['n_description_resto']);
-    $image = htmlspecialchars($_POST['n_image']);
-    $old_image = htmlspecialchars($_POST['old_image']);
-    //grabbing the picture
-    $file = $_FILES['n_image']['name'];
-    $file_loc = $_FILES['n_image']['tmp_name'];
-    $folder="../assets/img/restaurant/";
-    $new_file_name = strtolower($file);
-    $final_file=str_replace(' ','-',$new_file_name);
+    try {
 
-    if(move_uploaded_file($file_loc,$folder.$final_file)){
-        $image=$final_file;
-    }
+        $sql = "UPDATE RESTAURANT SET 
+                    \"NOM_RESTO\" = :n_nom_resto,
+                    \"NOTE_RESTO\" = :n_note_resto,
+                    \"ADRESSE_RESTO\" = :n_adresse_resto,
+                    \"CONTACT_RESTO\" = :n_contact_resto,
+                    \"DESCRIPTION_RESTO\" = :n_description_resto,
+                    \"IMAGE_RESTO\" = :n_image_resto
+                WHERE \"ID_RESTO\" = :id_resto ";
 
-    if (empty($image)){
-        $pic = $old_image;
-    }
-    else{
-        $pic = $image;
-    }
+        $query = $dbh->prepare($sql);
 
-    $sql = "UPDATE RESTAURANT SET 
-        \"NOM_RESTO\" = '$n_nom_resto',
-        \"NOTE_RESTO\" = '$n_note_resto',
-        \"ADRESSE_RESTO\" = '$n_adresse_resto',
-        \"CONTACT_RESTO\" = '$n_contact_resto',
-        \"DESCRIPTION_RESTO\" = '$n_description_resto',
-        \"IMAGE_RESTO\" = '$pic'
-        WHERE \"ID_RESTO\" = '$id_resto' ";
+        //grabbing the picture
+        $file = $_FILES['n_image_resto']['name'];
+        $file_loc = $_FILES['n_image_resto']['tmp_name'];
+        $folder = "../assets/img/restaurant/";
+        $new_file_name = strtolower($file);
+        $final_file = str_replace(' ','-',$new_file_name);
 
-    $query = $dbh->prepare($sql);
+        if(move_uploaded_file($file_loc, $folder.$final_file)){
+            $image = $final_file;
+        }
+
+
+        if (empty($image)){
+            $n_image_resto = $_POST['old_image_resto'];
+        
+        }else{
+            $n_image_resto = $image;
+
+        }
+
+        $query->bindParam(':id_resto',$_POST['id_resto']);
+        $query->bindParam(':n_nom_resto',$_POST['n_nom_resto']);
+        $query->bindParam(':n_note_resto',$_POST['n_note_resto']);
+        $query->bindParam(':n_adresse_resto',$_POST['n_adresse_resto']);
+        $query->bindParam(':n_contact_resto',$_POST['n_contact_resto']);
+        $query->bindParam(':n_description_resto',$_POST['n_description_resto']);
+        $query->bindParam(':n_image_resto',$n_image_resto);
+        $query->execute();
+        
+        echo "<script>window.location.href='/ganjamah/liste/restaurant.php';</script>";
     
-    if ($query->execute()) {
-        echo '<script>window.location.href="/ganjamah/liste/restaurant.php"</script>';
-    } else {
-        echo "Error";
+
+    } catch (PDOException $e) {
+        echo "Error: ".$e->getMessage();
+
     }
+
 }
 
 ?>
