@@ -45,7 +45,7 @@ if(isset($_POST['supprimer_resto'])){
     $sql = "DELETE FROM RESTAURANT WHERE \"ID_RESTO\"='$supprimer_resto_id' ";
     $query = $dbh->prepare($sql);
     if ($query->execute()) {
-        echo '<script>window.location.href="/ganjamah/liste/restarant.php"</script>';
+        echo '<script>window.location.href="/ganjamah/liste/restaurant.php"</script>';
     } else {
         echo "Error";
     }

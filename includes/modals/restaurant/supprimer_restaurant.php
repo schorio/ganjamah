@@ -1,4 +1,4 @@
-<div id="supprimer_restaurant_<?php echo htmlentities($row->id_resto); ?>" class="modal custom-modal fade" role="dialog">
+<div id="supprimer_restaurant_<?php echo $row['ID_RESTO']; ?>" class="modal custom-modal fade" role="dialog">
 	<div class="modal-dialog modal-dialog-centered">
 		<form method="post">
 			<!-- Modal content-->
@@ -10,7 +10,7 @@
 							<p>Voulez vous vraiment supprimer cet restaurant ?</p>
 					</div>
 					<div class="modal-btn delete-action">
-						<input type="hidden" name="supprimer_resto_id" value="<?php echo htmlentities($row->id_resto); ?>">
+						<input type="hidden" name="supprimer_resto_id" value="<?php echo $row['ID_RESTO']; ?>">
 						<div class="row">
 							<div class="col-6">
 								<a href="javascript:void(0);" data-dismiss="modal" class="btn btn-primary cancel-btn">Annuler</a>
