@@ -106,34 +106,31 @@
 
 							$query = $dbh->prepare($sql);
 							$query->execute();
-							$results=$query->fetchAll(PDO::FETCH_OBJ);
-							$cnt=1;
-							if($query->rowCount() > 0)
-							{
-								foreach($results as $row)
-								{	
+
+							while ($row = $query->fetch(PDO::FETCH_ASSOC))
+							{		
 											
 						?>
 						<div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
 							<div class="profile-widget">
 								<div class="profile-img">
 									<!-- <a href="/ganjamah/profile.php?id=<php echo $id_resto ?>" class="avatar"><img src="/ganjamah/assets/img/restaurant/<php echo $image_resto ?>" alt="image"></a> -->
-									<a href="#"data-toggle="modal" data-target="#voir_restaurant_<?php echo htmlentities($row->id_resto); ?>" class="avatar"><img src="/ganjamah/assets/img/restaurant/<?php echo htmlentities($row->image_resto); ?>" alt="image"></a>
+									<a href="#"data-toggle="modal" data-target="#voir_restaurant_<?php echo $row['ID_RESTO']; ?>" class="avatar"><img src="/ganjamah/assets/img/restaurant/<?php echo $row['IMAGE_RESTO']; ?>" alt="image"></a>
 								</div>
 									<div class="dropdown profile-action">
 										<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 										<div class="dropdown-menu dropdown-menu-right">
-											<a class="dropdown-item" href="#" data-toggle="modal" data-target="#modifier_restaurant_<?php echo htmlentities($row->id_resto); ?>"><i class="fa fa-pencil m-r-5"></i> Modifier</a>
-											<a class="dropdown-item" href="#" data-toggle="modal" data-target="#supprimer_restaurant_<?php echo htmlentities($row->id_resto); ?>"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
+											<a class="dropdown-item" href="#" data-toggle="modal" data-target="#modifier_restaurant_<?php echo $row['ID_RESTO']; ?>"><i class="fa fa-pencil m-r-5"></i> Modifier</a>
+											<a class="dropdown-item" href="#" data-toggle="modal" data-target="#supprimer_restaurant_<?php echo $row['ID_RESTO']; ?>"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
 										</div>
 									</div>
 								<div>
-									<h4 class="user-name m-t-10 mb-0 text-ellipsis"><?php echo htmlentities($row->nom_resto); ?></h4>
-									<h6 class="user-name text-muted"><?php echo htmlentities($row->adresse_resto); ?></h6>
-									<input data-role="rating" data-value="<?php echo htmlentities($row->note_resto); ?>">
+									<h4 class="user-name m-t-10 mb-0 text-ellipsis"><?php echo $row['NOM_RESTO']; ?></h4>
+									<h6 class="user-name text-muted"><?php echo $row['ADRESSE_RESTO']; ?></h6>
+									<input data-role="rating" data-value="<?php echo $row['NOTE_RESTO']; ?>">
 								</div>
 								<div class="small text-muted" style="font-weight: 500">
-									<?php echo $adresse_resto ?>
+									<?php echo $row['ADRESSE_RESTO']; ?>
 								</div>
 							</div>
 						</div>	
@@ -142,8 +139,7 @@
 						include("../includes/modals/restaurant/supprimer_restaurant.php");
 						include("../includes/modals/restaurant/voir_restaurant.php");
 						include("../includes/modals/restaurant/modifier_restaurant.php");
-								}
-						$cnt +=1; 
+
 							}
 						?>		
 					</div>

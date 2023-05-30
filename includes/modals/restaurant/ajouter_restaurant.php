@@ -54,7 +54,7 @@ $id = substr(str_shuffle($set), 0, 6);
 						<div class="col-md-12">
 							<div class="form-group">
 								<label class="col-form-label">Image </label>
-								<input class="form-control" name="image" type="file">
+								<input class="form-control" name="image_resto" type="file">
 							</div>
 						</div>
 					</div>

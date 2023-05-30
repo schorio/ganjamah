@@ -1,41 +1,45 @@
 <?php 
 
-if(isset($_POST['ajouter_resto'])){
+if(isset($_POST['ajouter_resto'])){    
+    
+    try {
+    $sql = "INSERT INTO RESTAURANT (\"ID_RESTO\", \"NOM_RESTO\", \"NOTE_RESTO\", \"ADRESSE_RESTO\", \"CONTACT_RESTO\", \"DESCRIPTION_RESTO\", \"IMAGE_RESTO\") 
+                    VALUES  (RESTAURANT_SEQUENCE.nextval, :nom_resto,  :note_resto,  :adresse_resto,  :contact_resto,  :description_resto, :image_resto)";
+        $query = $dbh->prepare($sql);
 
-    $nom_resto = htmlspecialchars($_POST['nom_resto']);
-    $note_resto = htmlspecialchars($_POST['note_resto']);
-    $adresse_resto = htmlspecialchars($_POST['adresse_resto']);
-    $contact_resto = htmlspecialchars($_POST['contact_resto']);
-    $description_resto = htmlspecialchars($_POST['description_resto']);
-    $image = htmlspecialchars($_POST['image']);
-    //grabbing the picture
-		$file = $_FILES['image']['name'];
-		$file_loc = $_FILES['image']['tmp_name'];
+        // $id_resto = '8';
+        $nom_resto = htmlspecialchars($_POST['nom_resto']);
+        $note_resto = htmlspecialchars($_POST['note_resto']);
+        $adresse_resto = htmlspecialchars($_POST['adresse_resto']);
+        $contact_resto = htmlspecialchars($_POST['contact_resto']);
+        $description_resto = htmlspecialchars($_POST['description_resto']);
+
+        //grabbing the picture
+		$file = $_FILES['image_resto']['name'];
+		$file_loc = $_FILES['image_resto']['tmp_name'];
 		$folder="../assets/img/restaurant/"; 
 		$new_file_name = strtolower($file);
 		$final_file=str_replace(' ','-',$new_file_name);
 
-		if(move_uploaded_file($file_loc,$folder.$final_file)){
-			$image=$final_file;
-		 }
+		if(move_uploaded_file($file_loc,$folder.$final_file)) {
+			$image_resto=$final_file;
+		}
 
-    $sql = "INSERT INTO `restaurant` (`nom_resto`, `note_resto`, `adresse_resto`, `contact_resto`, `description_resto`, `image_resto`) 
-                        VALUES  (:nom_resto,  :note_resto,  :adresse_resto,  :contact_resto,  :description_resto,  :image)";
-    $query = $dbh->prepare($sql);
-    $query->bindParam(':nom_resto',$nom_resto,PDO::PARAM_STR);
-    $query->bindParam(':note_resto',$note_resto,PDO::PARAM_STR);
-    $query->bindParam(':adresse_resto',$adresse_resto,PDO::PARAM_STR);
-    $query->bindParam(':contact_resto',$contact_resto,PDO::PARAM_STR);
-    $query->bindParam(':description_resto',$description_resto,PDO::PARAM_STR);
-    $query->bindParam(':image',$image,PDO::PARAM_STR);
-    $query->execute();
-    $lastInsert = $dbh->lastInsertId();
-    if($lastInsert>0){
+        // $query->bindParam(':id_resto',$id_resto);
+        $query->bindParam(':nom_resto',$nom_resto);
+        $query->bindParam(':note_resto',$note_resto);
+        $query->bindParam(':adresse_resto',$adresse_resto);
+        $query->bindParam(':contact_resto',$contact_resto);
+        $query->bindParam(':description_resto',$description_resto);
+        $query->bindParam(':image_resto',$image_resto);
+        $query->execute();
+        
         echo "<script>window.location.href='/ganjamah/liste/restaurant.php';</script>";
-        echo "<script>alert('Le restaurant est ajouter avec succes.');</script>";
-    }else{
-        echo "<script>alert('Une s'est produite');</script>";
-    }	
+    
+    } catch (PDOException $e) {
+        echo "Error: ".$e->getMessage();
+    }
+
 }
 
 
@@ -45,9 +49,10 @@ if(isset($_POST['ajouter_resto'])){
 if(isset($_POST['supprimer_resto'])){
     // sql to delete a record
     $supprimer_resto_id = $_POST['supprimer_resto_id'];
-    $sql = "DELETE FROM restaurant WHERE id_resto='$supprimer_resto_id' ";
-    if ($conn->query($sql) === TRUE) {
-        echo '<script>window.location.href="/ganjamah/liste/restaurant.php"</script>';
+    $sql = "DELETE FROM RESTAURANT WHERE \"ID_RESTO\"='$supprimer_resto_id' ";
+    $query = $dbh->prepare($sql);
+    if ($query->execute()) {
+        echo '<script>window.location.href="/ganjamah/liste/restarant.php"</script>';
     } else {
         echo "Error";
     }
@@ -79,23 +84,25 @@ if(isset($_POST['modifier_resto'])){
         $image=$final_file;
     }
 
-    if ($image = ""){
+    if (empty($image)){
         $pic = $old_image;
     }
     else{
         $pic = $image;
     }
 
-    $sql = "UPDATE restaurant SET 
-        nom_resto = '$n_nom_resto',
-        note_resto = '$n_note_resto',
-        adresse_resto = '$n_adresse_resto',
-        contact_resto = '$n_contact_resto',
-        description_resto = '$n_description_resto'
-        -- image = '$pic'
-        WHERE id_resto = '$id_resto' ";
+    $sql = "UPDATE RESTAURANT SET 
+        \"NOM_RESTO\" = '$n_nom_resto',
+        \"NOTE_RESTO\" = '$n_note_resto',
+        \"ADRESSE_RESTO\" = '$n_adresse_resto',
+        \"CONTACT_RESTO\" = '$n_contact_resto',
+        \"DESCRIPTION_RESTO\" = '$n_description_resto',
+        \"IMAGE_RESTO\" = '$pic'
+        WHERE \"ID_RESTO\" = '$id_resto' ";
 
-    if ($conn->query($sql) === TRUE) {
+    $query = $dbh->prepare($sql);
+    
+    if ($query->execute()) {
         echo '<script>window.location.href="/ganjamah/liste/restaurant.php"</script>';
     } else {
         echo "Error";
