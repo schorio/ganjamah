@@ -11,7 +11,7 @@
 	<div class="header-left">
 		<a href="/ganjamah/liste/hotel.php" class="logo">
 			<!-- <img src="assets/img/logo.png" width="40" height="40" alt=""> -->
-			<i class="fa fa-modx"></i>ganjamah.
+			<i class="fa fa-city"></i> GanjaMah.
 		</a>
 	</div>
 	<!-- /Logo -->
@@ -26,7 +26,7 @@
 	
 	<!-- Header Title -->
 	<div class="page-title-box">
-		<h3>ganjamah Administrator</h3>
+		<h3>ADMINISTRATEUR</h3>
 	</div>
 	<!-- /Header Title -->
 	

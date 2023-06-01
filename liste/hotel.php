@@ -28,10 +28,7 @@
         <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
 		
 		<!-- Fontawesome CSS -->
-        <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
-		
-		<!-- Lineawesome CSS -->
-        <link rel="stylesheet" href="../assets/css/line-awesome.min.css">
+        <link rel="stylesheet" href="../assets/font-awesome-6/css/all.css">
 		
 		<!-- Select2 CSS -->
 		<link rel="stylesheet" href="../assets/css/select2.min.css">
