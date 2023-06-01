@@ -111,7 +111,7 @@
                     </span>
                     <h3>Les hotels</h3>
                     <p class="text"></p>
-                    <a href="#" class="btn">Voir</a>
+                    <a href="/ganjamah/visiteur/liste/hotel.php" class="btn">Voir</a>
                 </div>
 
                 <div class="services-item">
