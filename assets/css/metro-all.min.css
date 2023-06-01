@@ -146,7 +146,7 @@
 
 .rating .stars li.half::after,
 .rating .stars li.on {
-    color: #c20505
+    color: #007b6f
 }
 
 .rating:not(.static) .stars {
@@ -154,7 +154,7 @@
 }
 
 .rating:not(.static) .stars:hover li {
-    color: #c20505
+    color: #007b6f
 }
 
 .rating:not(.static) .stars li:hover~li {
