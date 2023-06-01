@@ -18,41 +18,9 @@
         <link rel = "stylesheet" href = "css/responsive.css">
     </head>
     <body>
-        <!-- navbar  -->
-        <nav class = "navbar">
-            <div class = "container flex">
-                <a href = "index.html" class = "site-brand">
-                    Ganja<span>Mah.</span>
-                </a>
-
-                <button type = "button" id = "navbar-show-btn" class = "flex">
-                    <i class = "fas fa-bars"></i>
-                </button>
-                <div id="navbar-collapse">
-                    <button type="button" id="navbar-close-btn" class="flex">
-                        <i class="fas fa-times"></i>
-                    </button>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="index.html" class="nav-link">Accueil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="gallery.html" class="nav-link">Galerie</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="blog.html" class="nav-link">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="about.html" class="nav-link">a propos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="contact.html" class="nav-link">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- end of navbar  -->
+        <!-- Header -->
+            <?php include_once("includes/header.php");?>
+        <!-- /Header -->
 
         <!-- header -->
         <header class = "flex header-sm">
