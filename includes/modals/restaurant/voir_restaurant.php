@@ -16,7 +16,7 @@ $id = substr(str_shuffle($set), 0, 6);
                 <div class="image-container"> 
 					<img src="/ganjamah/assets/img/restaurant/<?php echo $row['IMAGE_RESTO']; ?>"> 
 				</div>
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 details">
 					<h2><?php echo $row['NOM_RESTO']; ?></h2>
 
 					<input data-role="rating" data-value="<?php echo $row['NOTE_RESTO']; ?>">
@@ -25,8 +25,9 @@ $id = substr(str_shuffle($set), 0, 6);
 						<span class="text-muted"><?php echo $row['ADRESSE_RESTO']; ?></span>
 					<br>
 						<span class="text-xs">0<?php echo $row['CONTACT_RESTO']; ?></span>
+					<br><br>
 
-					<p class="form-group mt-3 pt-3">
+					<p>
 						<?php echo $row['DESCRIPTION_RESTO']; ?>
 					</p>
                 </div>

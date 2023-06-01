@@ -9,16 +9,16 @@
 
 			<div class="modal-body row">
                 <div class="image-container"> <img src="/ganjamah/assets/img/blog/<?php echo $row['IMAGE_BLOG']; ?>"> </div>
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 details">
                     <h2><?php echo $row['TITRE_BLOG']; ?></h2>
 
-                    <h4 class="text-muted"><?php echo $row['DOMAINE_BLOG']; ?></h4><br>
+                    <h4 class="text-muted"><?php echo $row['DOMAINE_BLOG']; ?></h4><br><br>
 
-                    <p class="form-group mt-3 pt-3 mb-5">
-                        <?php echo $row['CONTENUE_BLOG']; ?>
+                    <p>
+                        <?php echo $row['CONTENUE_BLOG']; ?><br>
+                        <span class="text-xs">par </span><span class="text-muted"><?php echo $row['AUTEUR_BLOG']; ?></span>
                     </p>
 
-                    <span class="text-xs">par </span><span class="text-muted"><?php echo $row['AUTEUR_BLOG']; ?></span>
                 </div>
             </div>
 

@@ -17,7 +17,7 @@ $id = substr(str_shuffle($set), 0, 6);
 					<img src="/ganjamah/assets/img/hotel/<?php echo $row['IMAGE_HOTEL']; ?>"> 
 				</div>
                 <div class="col-12 col-lg-6 details">
-					<h2><?php echo $row['NOTE_HOTEL']; ?></h2>
+					<h2><?php echo $row['NOM_HOTEL']; ?></h2>
 
 					<input data-role="rating" data-value="<?php echo $row['NOTE_HOTEL']; ?>">
 

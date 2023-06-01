@@ -16,15 +16,16 @@ $id = substr(str_shuffle($set), 0, 6);
                 <div class="image-container"> 
 					<img src="/ganjamah/assets/img/zone visiteur/<?php echo $row['IMAGE_ZONE']; ?>"> 
 				</div>
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 details">
 					<h2><?php echo $row['NOM_ZONE']; ?></h2>
 
 					<input data-role="rating" data-value="<?php echo $row['NOTE_ZONE']; ?>">
 
 					<br>
-					<span class="text-muted"><?php echo $row['LOCALISATION_ZONE']; ?></span>
+						<span class="text-muted"><?php echo $row['LOCALISATION_ZONE']; ?></span>
+					<br><br>
 
-					<p class="form-group mt-3 pt-3">
+					<p>
 						<?php echo $row['DESCRIPTION_ZONE']; ?>
 					</p>
                 </div>

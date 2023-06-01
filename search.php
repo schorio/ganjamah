@@ -109,7 +109,7 @@
 																<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 																<div class="dropdown-menu dropdown-menu-right">
 																	<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_project"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-																	<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_project"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+																	<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_project"><i class="fa fa-trash m-r-5"></i> Delete</a>
 																</div>
 															</div>
 															<h4 class="project-title"><a href="project-view.php">Office Management</a></h4>
@@ -221,7 +221,7 @@
 																<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 																<div class="dropdown-menu dropdown-menu-right">
 																	<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_project"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-																	<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_project"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+																	<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_project"><i class="fa fa-trash m-r-5"></i> Delete</a>
 																</div>
 															</div>
 															<h4 class="project-title"><a href="project-view.php">Project Management</a></h4>
@@ -333,7 +333,7 @@
 																<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 																<div class="dropdown-menu dropdown-menu-right">
 																	<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_project"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-																	<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_project"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+																	<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_project"><i class="fa fa-trash m-r-5"></i> Delete</a>
 																</div>
 															</div>
 															<h4 class="project-title"><a href="project-view.php">Video Calling App</a></h4>
@@ -445,7 +445,7 @@
 																<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 																<div class="dropdown-menu dropdown-menu-right">
 																	<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_project"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-																	<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_project"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+																	<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_project"><i class="fa fa-trash m-r-5"></i> Delete</a>
 																</div>
 															</div>
 															<h4 class="project-title"><a href="project-view.php">Hospital Administration</a></h4>
@@ -565,7 +565,7 @@
 															<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 														<div class="dropdown-menu dropdown-menu-right">
 															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_client"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i class="fa fa-trash m-r-5"></i> Delete</a>
 														</div>
 														</div>
 														<h4 class="user-name m-t-10 mb-0 text-ellipsis"><a href="client-profile.php">Global Technologies</a></h4>
@@ -584,7 +584,7 @@
 															<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 														<div class="dropdown-menu dropdown-menu-right">
 															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_client"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i class="fa fa-trash m-r-5"></i> Delete</a>
 														</div>
 														</div>
 														<h4 class="user-name m-t-10 mb-0 text-ellipsis"><a href="client-profile.php">Delta Infotech</a></h4>
@@ -603,7 +603,7 @@
 															<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 														<div class="dropdown-menu dropdown-menu-right">
 															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_client"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i class="fa fa-trash m-r-5"></i> Delete</a>
 														</div>
 														</div>
 														<h4 class="user-name m-t-10 mb-0 text-ellipsis"><a href="client-profile.php">Cream Inc</a></h4>
@@ -622,7 +622,7 @@
 															<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 														<div class="dropdown-menu dropdown-menu-right">
 															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_client"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i class="fa fa-trash m-r-5"></i> Delete</a>
 														</div>
 														</div>
 														<h4 class="user-name m-t-10 mb-0 text-ellipsis"><a href="client-profile.php">Wellware Company</a></h4>
@@ -641,7 +641,7 @@
 															<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 														<div class="dropdown-menu dropdown-menu-right">
 															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_client"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i class="fa fa-trash m-r-5"></i> Delete</a>
 														</div>
 														</div>
 														<h4 class="user-name m-t-10 mb-0 text-ellipsis"><a href="client-profile.php">Mustang Technologies</a></h4>
@@ -660,7 +660,7 @@
 															<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 														<div class="dropdown-menu dropdown-menu-right">
 															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_client"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i class="fa fa-trash m-r-5"></i> Delete</a>
 														</div>
 														</div>
 														<h4 class="user-name m-t-10 mb-0 text-ellipsis"><a href="client-profile.php">International Software Inc</a></h4>
@@ -679,7 +679,7 @@
 															<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 														<div class="dropdown-menu dropdown-menu-right">
 															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_client"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i class="fa fa-trash m-r-5"></i> Delete</a>
 														</div>
 														</div>
 														<h4 class="user-name m-t-10 mb-0 text-ellipsis"><a href="client-profile.php">Mercury Software Inc</a></h4>
@@ -698,7 +698,7 @@
 															<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 														<div class="dropdown-menu dropdown-menu-right">
 															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_client"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i class="fa fa-trash m-r-5"></i> Delete</a>
 														</div>
 														</div>
 														<h4 class="user-name m-t-10 mb-0 text-ellipsis"><a href="client-profile.php">Carlson Tech</a></h4>
@@ -744,7 +744,7 @@
 																	<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 																	<div class="dropdown-menu dropdown-menu-right">
 																		<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_user"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-																		<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_user"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+																		<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_user"><i class="fa fa-trash m-r-5"></i> Delete</a>
 																	</div>
 																</div>
 															</td>
@@ -767,7 +767,7 @@
 																	<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 																	<div class="dropdown-menu dropdown-menu-right">
 																		<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_user"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-																		<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_user"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+																		<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_user"><i class="fa fa-trash m-r-5"></i> Delete</a>
 																	</div>
 																</div>
 															</td>
@@ -790,7 +790,7 @@
 																	<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 																	<div class="dropdown-menu dropdown-menu-right">
 																		<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_user"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-																		<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_user"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+																		<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_user"><i class="fa fa-trash m-r-5"></i> Delete</a>
 																	</div>
 																</div>
 															</td>
@@ -813,7 +813,7 @@
 																	<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 																	<div class="dropdown-menu dropdown-menu-right">
 																		<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_user"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-																		<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_user"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+																		<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_user"><i class="fa fa-trash m-r-5"></i> Delete</a>
 																	</div>
 																</div>
 															</td>
@@ -836,7 +836,7 @@
 																	<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 																	<div class="dropdown-menu dropdown-menu-right">
 																		<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_user"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-																		<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_user"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+																		<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_user"><i class="fa fa-trash m-r-5"></i> Delete</a>
 																	</div>
 																</div>
 															</td>
@@ -859,7 +859,7 @@
 																	<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 																	<div class="dropdown-menu dropdown-menu-right">
 																		<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_user"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-																		<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_user"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+																		<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_user"><i class="fa fa-trash m-r-5"></i> Delete</a>
 																	</div>
 																</div>
 															</td>
@@ -882,7 +882,7 @@
 																	<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 																	<div class="dropdown-menu dropdown-menu-right">
 																		<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_user"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-																		<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_user"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+																		<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_user"><i class="fa fa-trash m-r-5"></i> Delete</a>
 																	</div>
 																</div>
 															</td>
