@@ -40,8 +40,8 @@
     <section id="featured" class="py-4">
         <div class="container">
             <div class="title-wrap">
-                <span class="sm-title">Decouvrer quelques endroits avant votre depart</span>
-                <h2 class="lg-title">Quelques emplacements</h2>
+                <span class="sm-title">Passer une incroyable aventure avec nous</span>
+                <h2 class="lg-title">Nos circuits</h2>
             </div>
 
             <div class="featured-row">
@@ -50,81 +50,45 @@
                     <div class="featured-item-content">
                         <span>
                             <i class="fas fa-map-marker-alt"></i>
-                            Reo De Janeiro, Brazil
+                            Centre ville
                         </span>
                         <div>
-                            <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta sed
-                                dignissimos libero soluta illum, harum amet excepturi sit?</p>
+                            <p class="text">Hotel - Restauration - Transport</p><br>
+                        </div>
+                        <div>
+                            <button class="btn" href=""><i class="fa fa-trash m-r-5"></i> Reserver</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="featured-item my-2 shadow">
-                    <img src="/ganjamah/visiteur/images/featured-north-bondi-australia.jpg" alt="featured place">
+                    <img src="/ganjamah/visiteur/images/featured-reo-de-janeiro-brazil.jpg" alt="featured place">
                     <div class="featured-item-content">
                         <span>
                             <i class="fas fa-map-marker-alt"></i>
-                            North Bondi, Australia
+                            Antsanitia
                         </span>
                         <div>
-                            <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta sed
-                                dignissimos libero soluta illum, harum amet excepturi sit?</p>
+                            <p class="text">Hotel - Restauration - Transport</p><br>
+                        </div>
+                        <div>
+                            <button class="btn" href=""><i class="fa fa-trash m-r-5"></i> Reserver</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="featured-item my-2 shadow">
-                    <img src="/ganjamah/visiteur/images/featured-berlin-germany.jpg" alt="featured place">
+                    <img src="/ganjamah/visiteur/images/featured-reo-de-janeiro-brazil.jpg" alt="featured place">
                     <div class="featured-item-content">
                         <span>
                             <i class="fas fa-map-marker-alt"></i>
-                            Berlin, Germany
+                            Ankarafantsika
                         </span>
                         <div>
-                            <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta sed
-                                dignissimos libero soluta illum, harum amet excepturi sit?</p>
+                            <p class="text">Hotel - Restauration - Transport</p><br>
                         </div>
-                    </div>
-                </div>
-
-                <div class="featured-item my-2 shadow">
-                    <img src="/ganjamah/visiteur/images/featured-khwaeng-wat-arun-thailand.jpg" alt="featured place">
-                    <div class="featured-item-content">
-                        <span>
-                            <i class="fas fa-map-marker-alt"></i>
-                            Khwaeng wat arun, thailand
-                        </span>
                         <div>
-                            <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta sed
-                                dignissimos libero soluta illum, harum amet excepturi sit?</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="featured-item my-2 shadow">
-                    <img src="/ganjamah/visiteur/images/featured-rome-italy.jpg" alt="featured place">
-                    <div class="featured-item-content">
-                        <span>
-                            <i class="fas fa-map-marker-alt"></i>
-                            Rome, Italy
-                        </span>
-                        <div>
-                            <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta sed
-                                dignissimos libero soluta illum, harum amet excepturi sit?</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="featured-item my-2 shadow">
-                    <img src="/ganjamah/visiteur/images/featured-fuvahmulah-maldives.jpg" alt="featured place">
-                    <div class="featured-item-content">
-                        <span>
-                            <i class="fas fa-map-marker-alt"></i>
-                            fuvahmulah, maldives
-                        </span>
-                        <div>
-                            <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta sed
-                                dignissimos libero soluta illum, harum amet excepturi sit?</p>
+                            <button class="btn" href=""><i class="fa fa-trash m-r-5"></i> Reserver</a>
                         </div>
                     </div>
                 </div>
@@ -137,7 +101,6 @@
     <section id="services" class="py-4">
         <div class="container">
             <div class="title-wrap">
-                <span class="sm-title">en vous aidant à decouvrir la ville</span>
                 <h2 class="lg-title">decouvrer</h2>
             </div>
 
@@ -147,29 +110,26 @@
                         <i class="fas fa-hotel"></i>
                     </span>
                     <h3>Les hotels</h3>
-                    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quo, totam repellat
-                        velit, dignissimos sequi error a minima architecto fugit nisi dolorum repellendus?</p>
-                    <a href="#" class="btn">Read more</a>
+                    <p class="text"></p>
+                    <a href="#" class="btn">Voir</a>
+                </div>
+
+                <div class="services-item">
+                    <span class="services-icon">
+                        <i class="fas fa-utensils"></i>
+                    </span>
+                    <h3>Les restaurants</h3>
+                    <p class="text"></p>
+                    <a href="#" class="btn">Voir</a>
                 </div>
 
                 <div class="services-item">
                     <span class="services-icon">
                         <i class="fas fa-map-marked-alt"></i>
                     </span>
-                    <h3>Les restaurants</h3>
-                    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quo, totam repellat
-                        velit, dignissimos sequi error a minima architecto fugit nisi dolorum repellendus?</p>
-                    <a href="#" class="btn">Read more</a>
-                </div>
-
-                <div class="services-item">
-                    <span class="services-icon">
-                        <i class="fas fa-money-bill"></i>
-                    </span>
-                    <h3>Les les aires protégées</h3>
-                    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quo, totam repellat
-                        velit, dignissimos sequi error a minima architecto fugit nisi dolorum repellendus?</p>
-                    <a href="#" class="btn">Read more</a>
+                    <h3>Les zones touristiques</h3>
+                    <p class="text"></p>
+                    <a href="#" class="btn">Voir</a>
                 </div>
                 
             </div>
