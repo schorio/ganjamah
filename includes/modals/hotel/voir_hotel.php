@@ -12,21 +12,22 @@ $id = substr(str_shuffle($set), 0, 6);
 				</button>
 			</div>
 
-			<div class="modal-body row">
-                <div class="col-12 col-lg-6 voir"> 
+			<div class="modal-body centereee row">
+                <div class="image-container"> 
 					<img src="/ganjamah/assets/img/hotel/<?php echo $row['IMAGE_HOTEL']; ?>"> 
 				</div>
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 details">
 					<h2><?php echo $row['NOTE_HOTEL']; ?></h2>
 
 					<input data-role="rating" data-value="<?php echo $row['NOTE_HOTEL']; ?>">
 
 					<br>
-						<span class="text-muted"><?php echo $row['AADRESSE_HOTEL']; ?></span>
+						<span class="text-muted"><?php echo $row['ADRESSE_HOTEL']; ?></span>
 					<br>
 						<span class="text-xs">0<?php echo $row['CONTACT_HOTEL']; ?></span>
+					<br><br>
 
-					<p class="form-group mt-3 pt-3">
+					<p>
 						<?php echo $row['DESCRIPTION_HOTEL']; ?>
 					</p>
                 </div>

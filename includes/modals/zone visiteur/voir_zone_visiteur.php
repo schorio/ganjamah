@@ -2,7 +2,7 @@
 $id = substr(str_shuffle($set), 0, 6); 
 ?>
 
-<div id="voir_zone_visiteur_<?php echo htmlentities($row->id_zone); ?>" class="modal custom-modal fade" role="dialog">
+<div id="voir_zone_visiteur_<?php echo $row['ID_ZONE']; ?>" class="modal custom-modal fade" role="dialog">
 	<div class="modal-dialog modal-dialog-centered modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -13,19 +13,19 @@ $id = substr(str_shuffle($set), 0, 6);
 			</div>
 
 			<div class="modal-body row">
-                <div class="col-12 col-lg-6 voir"> 
-					<img src="/ganjamah/assets/img/zone visiteur/<?php echo htmlentities($row->image_zone); ?>"> 
+                <div class="image-container"> 
+					<img src="/ganjamah/assets/img/zone visiteur/<?php echo $row['IMAGE_ZONE']; ?>"> 
 				</div>
                 <div class="col-12 col-lg-6">
-					<h2><?php echo htmlentities($row->nom_zone); ?></h2>
+					<h2><?php echo $row['NOM_ZONE']; ?></h2>
 
-					<input data-role="rating" data-value="<?php echo htmlentities($row->note_zone); ?>">
+					<input data-role="rating" data-value="<?php echo $row['NOTE_ZONE']; ?>">
 
 					<br>
-					<span class="text-muted"><?php echo htmlentities($row->localisation_zone); ?></span>
+					<span class="text-muted"><?php echo $row['LOCALISATION_ZONE']; ?></span>
 
 					<p class="form-group mt-3 pt-3">
-						<?php echo htmlentities($row->description_zone); ?>
+						<?php echo $row['DESCRIPTION_ZONE']; ?>
 					</p>
                 </div>
             </div>

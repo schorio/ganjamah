@@ -24,7 +24,7 @@
 							</li>
 
 								<li> 
-									<a href="/ganjamah/liste/restaurant.php"><i class="la la-hotel"></i> <span>Restaurant</span></a>
+									<a href="/ganjamah/liste/restaurant.php"><i class="la la-pan-food"></i> <span>Restaurant</span></a>
 								</li>
 
 							<li class="menu-title"> 

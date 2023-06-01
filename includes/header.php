@@ -1,7 +1,7 @@
 <?php 
 	$username_ut = $_SESSION['userlogin'];
 
-	$sql_user = "SELECT * from utilisateur WHERE username_ut='$username_ut'";
+	$sql_user = "SELECT * from UTILISATEUR WHERE \"USERNAME_UT\" = '$username_ut'";
 	$query_user = $dbh->prepare($sql_user);
 	$query_user->execute();
 	$r_user = $query_user->fetch(PDO::FETCH_ASSOC);
@@ -38,7 +38,7 @@
 		<li class="nav-item dropdown has-arrow main-drop">
 			<a href="" class="nav-link">
 				<span class="user-img">
-					<img src="/ganjamah/assets/img/utilisateur/<?php echo $r_user['image_ut']; ?>">
+					<img src="/ganjamah/assets/img/utilisateur/<?php echo $r_user['IMAGE_UT']; ?>">
 					<span class="status online"></span>
 				</span>
 				<span><?php echo ucfirst($username_ut); ?></span>

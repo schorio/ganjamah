@@ -118,7 +118,6 @@
 						<div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
 							<div class="profile-widget">
 								<div class="profile-img">
-									<!-- <a href="/ganjamah/profile.php?id=<php echo $id_hotel ?>" class="avatar"><img src="/ganjamah/assets/img/hotel/<php echo $image_hotel ?>" alt="image"></a> -->
 									<a href="#"data-toggle="modal" data-target="#voir_hotel_<?php echo $row['ID_HOTEL']; ?>" class="avatar"><img src="/ganjamah/assets/img/hotel/<?php echo $row['IMAGE_HOTEL']; ?>" alt="image"></a>
 								</div>
 									<div class="dropdown profile-action">

@@ -8,7 +8,7 @@
 			</div>
 
 			<div class="modal-body row">
-                <div class="col-12 col-lg-6 voir"> <img src="/ganjamah/assets/img/blog/<?php echo $row['IMAGE_BLOG']; ?>"> </div>
+                <div class="image-container"> <img src="/ganjamah/assets/img/blog/<?php echo $row['IMAGE_BLOG']; ?>"> </div>
                 <div class="col-12 col-lg-6">
                     <h2><?php echo $row['TITRE_BLOG']; ?></h2>
 

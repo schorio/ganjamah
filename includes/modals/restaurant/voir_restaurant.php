@@ -2,7 +2,7 @@
 $id = substr(str_shuffle($set), 0, 6); 
 ?>
 
-<div id="voir_restaurant_<?php echo htmlentities($row->id_resto); ?>" class="modal custom-modal fade" role="dialog">
+<div id="voir_restaurant_<?php echo $row['ID_RESTO']; ?>" class="modal custom-modal fade" role="dialog">
 	<div class="modal-dialog modal-dialog-centered modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -13,21 +13,21 @@ $id = substr(str_shuffle($set), 0, 6);
 			</div>
 
 			<div class="modal-body row">
-                <div class="col-12 col-lg-6 voir"> 
-					<img src="/ganjamah/assets/img/restaurant/<?php echo htmlentities($row->image_resto); ?>"> 
+                <div class="image-container"> 
+					<img src="/ganjamah/assets/img/restaurant/<?php echo $row['IMAGE_RESTO']; ?>"> 
 				</div>
                 <div class="col-12 col-lg-6">
-					<h2><?php echo htmlentities($row->nom_resto); ?></h2>
+					<h2><?php echo $row['NOM_RESTO']; ?></h2>
 
-					<input data-role="rating" data-value="<?php echo htmlentities($row->note_resto); ?>">
+					<input data-role="rating" data-value="<?php echo $row['NOTE_RESTO']; ?>">
 
 					<br>
-						<span class="text-muted"><?php echo htmlentities($row->adresse_resto); ?></span>
+						<span class="text-muted"><?php echo $row['ADRESSE_RESTO']; ?></span>
 					<br>
-						<span class="text-xs">0<?php echo htmlentities($row->contact_resto); ?></span>
+						<span class="text-xs">0<?php echo $row['CONTACT_RESTO']; ?></span>
 
 					<p class="form-group mt-3 pt-3">
-						<?php echo htmlentities($row->description_resto); ?>
+						<?php echo $row['DESCRIPTION_RESTO']; ?>
 					</p>
                 </div>
             </div>
