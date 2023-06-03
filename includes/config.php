@@ -10,17 +10,7 @@ $config = [
 ];
 
 $username = "schorio";                  // Use your username
-$password = "schorio";   
-$host = 'localhost'; // Adresse du serveur Oracle
-$port = '1521'; // Port du serveur Oracle
-$service = 'XE';          // and your password
-$database = "oci:dbname=localhost:1521/xe"; 
-$opt = [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_NUM,
-];  // and the connect string to connect to your database
-
-
+$password = "schorio";
 
 $mydb="
   (DESCRIPTION =
@@ -36,8 +26,7 @@ $mydb="
 
 // $conn = oci_connect($username, $password, $base);
 try {
-  // $dbh = new PDO("mysql:host={$config['DB_HOST']};dbname={$config['DB_NAME']}", $config['DB_USER'], $config['DB_PASSWORD'],array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
-  $dbh = new PDO("oci:dbname=".$mydb, $username, $password);
+  $dbh = new PDO("oci:dbname=".$mydb.";charset=UTF8", $username, $password);
 
 }
 catch (PDOException $e){
