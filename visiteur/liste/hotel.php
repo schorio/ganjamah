@@ -1,3 +1,5 @@
+<?php include_once('../../includes/config.php'); ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,6 +18,7 @@
         <link rel="stylesheet" href="/ganjamah/visiteur/css/utility.css">
         <link rel="stylesheet" href="/ganjamah/visiteur/css/style.css">
         <link rel="stylesheet" href="/ganjamah/visiteur/css/responsive.css">
+        <link rel="stylesheet" href="/ganjamah/assets/css/metro-all.min.css">
     </head>
     <body>
         <!-- Header -->
@@ -27,7 +30,7 @@
             <div class = "container">
                 <div class = "header-title">
                     <h1>Hotel</h1>
-                    <p>Liste des hotels présent à Majunga</p>
+                    <p>La liste des hotels présent à Majunga</p>
                 </div>
             </div>
         </header>
@@ -36,138 +39,40 @@
         <!-- popular places section -->
         <section id = "popular" class = "py-4">
             <div class = "title-wrap">
-                <span class = "sm-title">know about some coo destination</span>
-                <h2 class = "lg-title">Popular Places</h2>
+                <span class = "sm-title">GANJAMAH</span>
+                <h2 class = "lg-title">Les plus populaires des hotel</h2>
             </div>
 
             <div class = "popular-row">
+
+                <?php
+
+                    $sql = "SELECT * from hotel";
+
+                    $query = $dbh->prepare($sql);
+                    $query->execute();
+
+                    while ($row = $query->fetch(PDO::FETCH_ASSOC))
+                    {	
+                                    
+                ?>
+
                 <div class = "popular-item shadow">
-                    <img src = "/ganjamah/visiteur/images/test-4.jpg" alt = "">
+                    <img src = "/ganjamah/assets/img/hotel/<?php echo $row['IMAGE_HOTEL']; ?>" alt = "">
                     <div>
-                        <span>Eiffel Tower, Paris</span>
-                        <ul class = "rating flex">
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star-half-alt"></i></li>
-                            <li>&nbsp;400 reviews</li>
-                        </ul>
-                        <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quia!</p>
+                        <span class="titre-1"><?php echo $row['NOM_HOTEL']; ?></span><br>
+                        <span class="titre-2 text-muted"><?php echo $row['ADRESSE_HOTEL']; ?></span>
+                        <p class="">
+                            <input data-role="rating" data-value="<?php echo $row['NOTE_HOTEL']; ?>">
+                        </p>
+                        <!-- <p class = "text"><php echo $row['DESCRIPTION_HOTEL']; ?></p> -->
                     </div>
                 </div>
 
-                <div class = "popular-item shadow">
-                    <img src = "/ganjamah/visiteur/images/popular-2.jpg" alt = "">
-                    <div>
-                        <span>Machu Picchu, Peru</span>
-                        <ul class = "rating flex">
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star-half-alt"></i></li>
-                            <li>&nbsp;400 reviews</li>
-                        </ul>
-                        <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quia!</p>
-                    </div>
-                </div>
+                <?php
+                    }
+                ?>
 
-                <div class = "popular-item shadow">
-                    <img src = "/ganjamah/visiteur/images/popular-3.jpg" alt = "">
-                    <div>
-                        <span>Acropolis, Athens</span>
-                        <ul class = "rating flex">
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star-half-alt"></i></li>
-                            <li>&nbsp;400 reviews</li>
-                        </ul>
-                        <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quia!</p>
-                    </div>
-                </div>
-
-                <div class = "popular-item shadow">
-                    <img src = "/ganjamah/visiteur/images/popular-4.jpg" alt = "">
-                    <div>
-                        <span>Bali, Indonesia</span>
-                        <ul class = "rating flex">
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star-half-alt"></i></li>
-                            <li>&nbsp;400 reviews</li>
-                        </ul>
-                        <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quia!</p>
-                    </div>
-                </div>
-
-                <div class = "popular-item shadow">
-                    <img src = "/ganjamah/visiteur/images/popular-5.jpg" alt = "">
-                    <div>
-                        <span>Dubai, United Arab Emirates</span>
-                        <ul class = "rating flex">
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star-half-alt"></i></li>
-                            <li>&nbsp;400 reviews</li>
-                        </ul>
-                        <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quia!</p>
-                    </div>
-                </div>
-
-                <div class = "popular-item shadow">
-                    <img src = "/ganjamah/visiteur/images/popular-6.jpg" alt = "">
-                    <div>
-                        <span>Bhutan</span>
-                        <ul class = "rating flex">
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star-half-alt"></i></li>
-                            <li>&nbsp;400 reviews</li>
-                        </ul>
-                        <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quia!</p>
-                    </div>
-                </div>
-
-                <div class = "popular-item shadow">
-                    <img src = "/ganjamah/visiteur/images/popular-7.jpg" alt = "">
-                    <div>
-                        <span>Havana, Cuba</span>
-                        <ul class = "rating flex">
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star-half-alt"></i></li>
-                            <li>&nbsp;400 reviews</li>
-                        </ul>
-                        <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quia!</p>
-                    </div>
-                </div>
-
-                <div class = "popular-item shadow">
-                    <img src = "/ganjamah/visiteur/images/popular-8.jpg" alt = "">
-                    <div>
-                        <span>Moskva, Russia</span>
-                        <ul class = "rating flex">
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star"></i></li>
-                            <li><i class = "fas fa-star-half-alt"></i></li>
-                            <li>&nbsp;400 reviews</li>
-                        </ul>
-                        <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quia!</p>
-                    </div>
-                </div>
             </div>
         </section>
         <!-- end of popular places section -->
@@ -179,5 +84,6 @@
 
         <!-- js -->
         <script src = "js/script.js"></script>
+        <script src="/ganjamah/assets/js/metro.min.js"></script>
     </body>
 </html>
