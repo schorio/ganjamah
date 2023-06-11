@@ -56,7 +56,7 @@
                             <p class="text">Hotel - Restauration - Transport</p><br>
                         </div>
                         <div>
-                            <button class="btn" href=""><i class="fa fa-trash m-r-5"></i> Reserver</a>
+                            <button type="button" class="btn btn-outline-info" href=""><i class="fa fa-trash m-r-5"></i> Reserver</a>
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                             <p class="text">Hotel - Restauration - Transport</p><br>
                         </div>
                         <div>
-                            <button class="btn" href=""><i class="fa fa-trash m-r-5"></i> Reserver</a>
+                            <button type="button" class="btn btn-outline-info" href=""><i class="fa fa-trash m-r-5"></i> Reserver</a>
                         </div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                             <p class="text">Hotel - Restauration - Transport</p><br>
                         </div>
                         <div>
-                            <button class="btn" href=""><i class="fa fa-trash m-r-5"></i> Reserver</a>
+                            <button type="button" class="btn btn-outline-info" href=""><i class="fa fa-trash m-r-5"></i> Reserver</a>
                         </div>
                     </div>
                 </div>
@@ -111,7 +111,7 @@
                     </span>
                     <h3>Les hotels</h3>
                     <p class="text"></p>
-                    <a href="/ganjamah/visiteur/liste/hotel.php" class="btn">Voir</a>
+                    <a href="/ganjamah/visiteur/liste/hotel.php" class="btn btn-outline-info">Voir</a>
                 </div>
 
                 <div class="services-item">
@@ -120,7 +120,7 @@
                     </span>
                     <h3>Les restaurants</h3>
                     <p class="text"></p>
-                    <a href="#" class="btn">Voir</a>
+                    <a href="#" class="btn btn-outline-info">Voir</a>
                 </div>
 
                 <div class="services-item">
@@ -129,7 +129,7 @@
                     </span>
                     <h3>Les zones touristiques</h3>
                     <p class="text"></p>
-                    <a href="#" class="btn">Voir</a>
+                    <a href="#" class="btn btn-outline-info">Voir</a>
                 </div>
                 
             </div>

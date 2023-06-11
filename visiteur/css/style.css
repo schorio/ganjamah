@@ -719,7 +719,7 @@ header.header-sm{
     z-index: 2;
     bottom: -100%;
     width: 100%;
-    padding: 13px 17px 35px;
+    padding: 15px 17px 35px;
     -webkit-transition: var(--trans);
     -o-transition: var(--trans);
     transition: var(--trans);
@@ -842,6 +842,7 @@ header.header-sm{
 .contact-form .btn{
     display: block;
     margin: auto;
+    color: var(--green) !important;
 }
 .contact-icon{
     background-color: var(--green);
