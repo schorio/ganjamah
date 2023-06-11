@@ -120,7 +120,7 @@
                     </span>
                     <h3>Les restaurants</h3>
                     <p class="text"></p>
-                    <a href="#" class="btn btn-outline-info">Voir</a>
+                    <a href="/ganjamah/visiteur/liste/restaurant.php" class="btn btn-outline-info">Voir</a>
                 </div>
 
                 <div class="services-item">

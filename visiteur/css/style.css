@@ -700,6 +700,7 @@ header.header-sm{
     -webkit-transition: var(--trans);
     -o-transition: var(--trans);
     transition: var(--trans);
+    height: 300px;
 }
 .popular-item::after{
     content: "";
