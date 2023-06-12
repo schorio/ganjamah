@@ -21,11 +21,11 @@ $id = substr(str_shuffle($set), 0, 6);
 
 						<span class="text-muted"><?php echo $row['DUREE_CIRCUIT']; ?> jour(s)</span>
 					<br>
-						<span class="text-xs">0<?php echo $row['PRIX_CIRCUIT']; ?> Ar</span>
+						<span class="text-xs"><?php echo $row['PRIX_CIRCUIT']; ?> Ar</span>
 					<br>
 					<br>
-						<span class="text-xs">0<?php echo $row['PLACE_CIRCUIT']; ?> places disponibles</span>
-					<br><br>
+						<span class="text-muted"><?php echo $row['PLACE_CIRCUIT']; ?></span><span class="text-xs"> places disponibles</span>
+					<br>
 
 					<p>
 						<?php echo $row['DESCRIPTION_CIRCUIT']; ?>
