@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿<?php include_once('includes/config.php'); ?>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -45,16 +46,29 @@
             </div>
 
             <div class="featured-row">
+
+                <?php
+
+                    $sql = "SELECT * from circuit";
+
+                    $query = $dbh->prepare($sql);
+                    $query->execute();
+
+                    while ($row = $query->fetch(PDO::FETCH_ASSOC))
+                    {	
+                                    
+                ?>
+
                 <div class="featured-item my-2 shadow">
-                    <img src="/ganjamah/visiteur/images/featured-reo-de-janeiro-brazil.jpg" alt="featured place">
+                    <img src="/ganjamah/assets/img/circuit/<?php echo $row['IMAGE_CIRCUIT']; ?>" alt="featured place">
                     <div class="featured-item-content">
                         <span>
                             <i class="fas fa-map-marker-alt"></i>
-                            Centre ville
+                            <?php echo $row['LOCALISATION_CIRCUIT']; ?>
                         </span>
                         <div>
-                            <p class="text">Hotel - Restauration - Transport</p>
-                            <p class="text">3 jours</p>
+                            <p class="text"><?php echo $row['DESCRIPTION_CIRCUIT']; ?></p>
+                            <p class="text"><?php echo $row['DUREE_CIRCUIT']; ?></p>
                         </div>
                         <div>
                             <button type="button" class="btn btn-outline-info" href=""><i class="fa fa-trash m-r-5"></i> Reserver</a>
@@ -62,37 +76,10 @@
                     </div>
                 </div>
 
-                <div class="featured-item my-2 shadow">
-                    <img src="/ganjamah/visiteur/images/featured-reo-de-janeiro-brazil.jpg" alt="featured place">
-                    <div class="featured-item-content">
-                        <span>
-                            <i class="fas fa-map-marker-alt"></i>
-                            Antsanitia
-                        </span>
-                        <div>
-                            <p class="text">Hotel - Restauration - Transport</p><br>
-                        </div>
-                        <div>
-                            <button type="button" class="btn btn-outline-info" href=""><i class="fa fa-trash m-r-5"></i> Reserver</a>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                    }
+                ?>
 
-                <div class="featured-item my-2 shadow">
-                    <img src="/ganjamah/visiteur/images/featured-reo-de-janeiro-brazil.jpg" alt="featured place">
-                    <div class="featured-item-content">
-                        <span>
-                            <i class="fas fa-map-marker-alt"></i>
-                            Ankarafantsika
-                        </span>
-                        <div>
-                            <p class="text">Hotel - Restauration - Transport</p><br>
-                        </div>
-                        <div>
-                            <button type="button" class="btn btn-outline-info" href=""><i class="fa fa-trash m-r-5"></i> Reserver</a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
