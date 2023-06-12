@@ -59,6 +59,17 @@
 							</li>
 
 								<li> 
+									<a href="/ganjamah/liste/circuit.php"><i class="fa fa-shuttle-van"></i> <span>Circuit</span></a>
+								</li>
+
+							<li class="menu-title"> 
+								<span></span>
+							</li>
+							<li class="menu-title"> 
+								<span></span>
+							</li>
+
+								<li> 
 									<a href=""><i class="fa fa-clipboard-check"></i> <span>Reservation</span></a>
 								</li>
 

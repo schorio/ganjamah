@@ -53,7 +53,8 @@
                             Centre ville
                         </span>
                         <div>
-                            <p class="text">Hotel - Restauration - Transport</p><br>
+                            <p class="text">Hotel - Restauration - Transport</p>
+                            <p class="text">3 jours</p>
                         </div>
                         <div>
                             <button type="button" class="btn btn-outline-info" href=""><i class="fa fa-trash m-r-5"></i> Reserver</a>
