@@ -3,14 +3,15 @@
 if(isset($_POST['ajouter_circuit'])){    
     
     try {
-    $sql = "INSERT INTO circuit (\"ID_CIRCUIT\", \"LOCALISATION_CIRCUIT\", \"DUREE_CIRCUIT\", \"PRIX_CIRCUIT\", \"PLACE_CIRCUIT\", \"IMAGE_CIRCUIT\") 
-                    VALUES  (CIRCUIT_SEQUENCE.nextval, :localisation_circuit,  :duree_circuit,  :prix_circuit,  :place_circuit, :image)";
+    $sql = "INSERT INTO circuit (\"ID_CIRCUIT\", \"LOCALISATION_CIRCUIT\", \"DUREE_CIRCUIT\", \"PRIX_CIRCUIT\", \"PLACE_CIRCUIT\", \"DESCRIPTION_CIRCUIT\", \"IMAGE_CIRCUIT\") 
+                    VALUES  (CIRCUIT_SEQUENCE.nextval, :localisation_circuit,  :duree_circuit,  :prix_circuit,  :place_circuit, :description_circuit, :image)";
         $query = $dbh->prepare($sql);
 
         $localisation_circuit = htmlspecialchars($_POST['localisation_circuit']);
         $duree_circuit = htmlspecialchars($_POST['duree_circuit']);
         $prix_circuit = htmlspecialchars($_POST['prix_circuit']);
         $place_circuit = htmlspecialchars($_POST['place_circuit']);
+        $description_circuit = htmlspecialchars($_POST['description_circuit']);
         $image = htmlspecialchars($_POST['image']);
         //grabbing the picture
 		$file = $_FILES['image']['name'];
@@ -27,6 +28,7 @@ if(isset($_POST['ajouter_circuit'])){
         $query->bindParam(':duree_circuit',$duree_circuit);
         $query->bindParam(':prix_circuit',$prix_circuit);
         $query->bindParam(':place_circuit',$place_circuit);
+        $query->bindParam(':description_circuit',$description_circuit);
         $query->bindParam(':image',$image);
         $query->execute();
         
@@ -66,6 +68,7 @@ if(isset($_POST['modifier_circuit'])){
     $n_duree_circuit = htmlspecialchars($_POST['n_duree_circuit']);
     $n_prix_circuit = htmlspecialchars($_POST['n_prix_circuit']);
     $n_place_circuit = htmlspecialchars($_POST['n_place_circuit']);
+    $n_description_circuit = htmlspecialchars($_POST['n_description_circuit']);
     $n_image = htmlspecialchars($_POST['n_image']);
     $old_image = htmlspecialchars($_POST['old_image']);
     //grabbing the picture
@@ -91,6 +94,7 @@ if(isset($_POST['modifier_circuit'])){
             \"DUREE_CIRCUIT\" = '$n_duree_circuit',
             \"PRIX_CIRCUIT\" = '$n_prix_circuit',
             \"PLACE_CIRCUIT\" = '$n_place_circuit',
+            \"DESCRIPTION_CIRCUIT\" = '$n_description_circuit',
             \"IMAGE_CIRCUIT\" = '$pic'
         WHERE \"ID_CIRCUIT\" = '$id_circuit' ";
 

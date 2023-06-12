@@ -44,6 +44,13 @@ $id = substr(str_shuffle($set), 0, 6);
 							</div>
 						</div>
 
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label class="col-form-label">Description : <span class="text-danger">*</span></label>
+								<input name="description_circuit" class="form-control" type="text">
+							</div>
+						</div>
+
 						<div class="col-md-12">
 							<div class="form-group">
 								<label class="col-form-label">Image </label>

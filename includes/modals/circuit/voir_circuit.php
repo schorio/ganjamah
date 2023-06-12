@@ -2,11 +2,11 @@
 $id = substr(str_shuffle($set), 0, 6); 
 ?>
 
-<div id="voir_hotel_<?php echo $row['ID_HOTEL']; ?>" class="modal custom-modal fade" role="dialog">
+<div id="voir_circuit_<?php echo $row['ID_CIRCUIT']; ?>" class="modal custom-modal fade" role="dialog">
 	<div class="modal-dialog modal-dialog-centered modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
-				<!-- <h5 class="modal-title">Voir l'hotel</h5> -->
+				<!-- <h5 class="modal-title">Voir l'circuit</h5> -->
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -14,21 +14,21 @@ $id = substr(str_shuffle($set), 0, 6);
 
 			<div class="modal-body centereee row">
                 <div class="image-container"> 
-					<img src="/ganjamah/assets/img/hotel/<?php echo $row['IMAGE_HOTEL']; ?>"> 
+					<img src="/ganjamah/assets/img/circuit/<?php echo $row['IMAGE_CIRCUIT']; ?>"> 
 				</div>
                 <div class="col-12 col-lg-6 details">
-					<h2><?php echo $row['NOM_HOTEL']; ?></h2>
+					<h2><?php echo $row['LOCALISATION_CIRCUIT']; ?></h2>
 
-					<input data-role="rating" data-value="<?php echo $row['NOTE_HOTEL']; ?>">
-
+						<span class="text-muted"><?php echo $row['DUREE_CIRCUIT']; ?> jour(s)</span>
 					<br>
-						<span class="text-muted"><?php echo $row['ADRESSE_HOTEL']; ?></span>
+						<span class="text-xs">0<?php echo $row['PRIX_CIRCUIT']; ?> Ar</span>
 					<br>
-						<span class="text-xs">0<?php echo $row['CONTACT_HOTEL']; ?></span>
+					<br>
+						<span class="text-xs">0<?php echo $row['PLACE_CIRCUIT']; ?> places disponibles</span>
 					<br><br>
 
 					<p>
-						<?php echo $row['DESCRIPTION_HOTEL']; ?>
+						<?php echo $row['DESCRIPTION_CIRCUIT']; ?>
 					</p>
                 </div>
             </div>
