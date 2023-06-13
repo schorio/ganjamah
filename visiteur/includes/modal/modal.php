@@ -1,33 +1,4 @@
-<!doctype html>
-<html lang="en">
-  <head>
-  	<title>Modal 02</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-	
-		<link rel="stylesheet" href="css/ionicons.min.css">
-		<link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-		<section class="ftco-section">
-			<div class="container">
-				<div class="row justify-content-center js-fullheight">
-					<div class="col-md-6 text-center d-flex align-items-center">
-						<div class="wrap w-100">
-							<h2 class="mb-2">Modal 02</h2>
-							<button type="button" class="btn btn-primary py-3 px-4" data-toggle="modal" data-target="#exampleModalCenter">
-							  Launch Modal 02
-							</button>
-
-							<!-- Modal -->
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		
 		<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		  <div class="modal-dialog modal-dialog-centered" role="document">
 		    <div class="modal-content">
@@ -37,7 +8,7 @@
 		        </button>
 		      </div>
 		      <div class="row">
-					<div class=" col-md bg-image promo-img" style="background-image: url('images/img_1.jpg');">
+					<div class=" col-md bg-image promo-img" style="background-image: url('/ganjamah/visiteur/includes/modal/images/img_1.jpg');">
 						<span class="price">$2000</span>
 					</div>
 				    <!-- <div class="col-md-1 divider"></div> -->
@@ -58,12 +29,12 @@
 			              <input type="password" class="form-control" placeholder="Password">
 			            </div>
 			            <div class="form-group">
-			            	<button type="submit" class="form-control btn btn-primary rounded submit px-3">Login</button>
+			            	<button type="submit" class="btn btn-outline-info rounded submit px-3">Login</button>
 			            </div>
 			            <div class="form-group">
-										<div class="w-100">
-											<p class="mb-0">By creating an account, your agree to our terms.</p>
-										</div>
+							<div class="w-100">
+								<p class="mb-0">By creating an account, your agree to our terms.</p>
+							</div>
 			            </div>
 			          </form>
 				      </div>
@@ -73,9 +44,3 @@
 		  </div>
 		</div>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
-</html>

@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="/ganjamah/visiteur/css/normalize.css">
     <!-- custom css -->
     <link rel="stylesheet" href="/ganjamah/visiteur/css/utility.css">
+    <link rel="stylesheet" href="/ganjamah/visiteur/includes/modal/css/style.css">
+    <link rel="stylesheet" href="/ganjamah/visiteur/includes/modal/css/ionicons.min.css">
     <link rel="stylesheet" href="/ganjamah/visiteur/css/style.css">
     <link rel="stylesheet" href="/ganjamah/visiteur/css/responsive.css">
 </head>
@@ -71,12 +73,17 @@
                             <p class="text"><?php echo $row['DUREE_CIRCUIT']; ?></p>
                         </div>
                         <div>
-                            <button type="button" class="btn btn-outline-info" href=""><i class="fa fa-trash m-r-5"></i> Reserver</a>
+                            <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModalCenter">
+                                <i class="fa fa-trash m-r-5"></i> Reserver</a>
+                            </button>
                         </div>
                     </div>
                 </div>
 
                 <?php
+
+                        include("visiteur/includes/modal/modal.php");
+
                     }
                 ?>
 
@@ -228,6 +235,10 @@
             }
         });
     </script>
+    <script src="/ganjamah/visiteur/includes/modal/js/jquery.min.js"></script>
+    <script src="/ganjamah/visiteur/includes/modal/js/popper.js"></script>
+    <script src="/ganjamah/visiteur/includes/modal/js/bootstrap.min.js"></script>
+    <script src="/ganjamah/visiteur/includes/modal/js/main.js"></script>
 </body>
 
 </html>
