@@ -70,7 +70,7 @@
 							</li>
 
 								<li> 
-									<a href=""><i class="fa fa-clipboard-check"></i> <span>Reservation</span></a>
+									<a href="/ganjamah/liste/reservation.php"><i class="fa fa-clipboard-check"></i> <span>Reservation</span></a>
 								</li>
 
 							<li class="menu-title"> 
