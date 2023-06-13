@@ -109,7 +109,7 @@
 							$query->execute();
 							
 							while ($row = $query->fetch(PDO::FETCH_ASSOC))
-							{	
+							{
 											
 						?>
 						<div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
