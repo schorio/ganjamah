@@ -1,5 +1,5 @@
 
-		<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal fade" id="exampleModalCenter_<?php echo $row['ID_CIRCUIT']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		  <div class="modal-dialog modal-dialog-centered" role="document">
 		    <div class="modal-content">
 		      <div class="modal-header">
@@ -9,7 +9,7 @@
 		      </div>
 		      <div class="row">
 					<div class=" col-md bg-image promo-img" style="background-image: url('/ganjamah/visiteur/includes/modal/images/img_1.jpg');">
-						<span class="price">$2000</span>
+						<span class="price"><?php echo $row['LOCALISATION_CIRCUIT']; ?></span>
 					</div>
 				    <!-- <div class="col-md-1 divider"></div> -->
 				    <div class="col-md reservation">

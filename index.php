@@ -73,7 +73,7 @@
                             <p class="text"><?php echo $row['DUREE_CIRCUIT']; ?></p>
                         </div>
                         <div>
-                            <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModalCenter">
+                            <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModalCenter_<?php echo $row['ID_CIRCUIT']; ?>">
                                 <i class="fa fa-trash m-r-5"></i> Reserver</a>
                             </button>
                         </div>
