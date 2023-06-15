@@ -48,7 +48,7 @@
 							</li>
 
 								<li> 
-									<a href="/ganjamah/liste/galerie.php"><i class="fa fa-street-view"></i> <span>Galerie</span></a>
+									<a href="/ganjamah/liste/galerie.php"><i class="fa fa-image"></i> <span>Galerie</span></a>
 								</li>
 
 							<li class="menu-title"> 
