@@ -243,6 +243,24 @@
     <script src="/ganjamah/visiteur/includes/modal/js/popper.js"></script>
     <script src="/ganjamah/visiteur/includes/modal/js/bootstrap.min.js"></script>
     <script src="/ganjamah/visiteur/includes/modal/js/main.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#input_1, #input_11").on("input", function(){
+                // Calculer le produit des valeurs de input1 et input2
+                var val1 = parseFloat($("#input_1").val()) || 0;
+                var val2 = parseFloat($("#input_11").val()) || 0;
+                var result = val1 * val2;
+                
+                // Mettre à jour la valeur de inputResult avec le produit
+                $("#input_2").val(result);
+            });
+        });
+    </script>
+    <script>
+      $('.modal').on('hidden.bs.modal', function() {
+        $(this).find('form')[0].reset();
+      });
+    </script>
 </body>
 
 </html>

@@ -26,10 +26,11 @@
 				      			<input name="contact_reservation" type="text" class="form-control" placeholder="Contact">
 				      		</div>
 				      		<div class="form-group">
-								<input name="place_reservation" type="number" class="form-control" placeholder="Nombre de personne">
+								<input name="place_reservation" id="input_1" type="number" class="form-control" placeholder="Nombre de personne">
+								<input id="input_11" type="hidden" class="form-control" value="<?php echo $row['PRIX_CIRCUIT']; ?>">
 							</div>
 							<div class="form-group">
-								<input name="total_reservation" type="number" class="form-control" placeholder="Total à payer" readonly>
+								<input name="total_reservation" id="input_2" type="number" class="form-control" placeholder="Total à payer" readonly>
 							</div>
 							<div class="form-group">
 								<input name="circuit_reservation" type="hidden" value="<?php echo $row['ID_CIRCUIT']; ?>">
