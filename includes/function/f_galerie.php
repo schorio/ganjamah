@@ -55,20 +55,16 @@ if(isset($_POST['supprimer_galerie'])){
 // ===================================================
 
 
-if(isset($_POST['modifier_hotel'])){
+if(isset($_POST['modifier_galerie'])){
 
-    $id_hotel = htmlspecialchars($_POST['id_hotel']);
-    $n_nom_hotel = htmlspecialchars($_POST['n_nom_hotel']);
-    $n_note_hotel = htmlspecialchars($_POST['n_note_hotel']);
-    $n_adresse_hotel = htmlspecialchars($_POST['n_adresse_hotel']);
-    $n_contact_hotel = htmlspecialchars($_POST['n_contact_hotel']);
-    $n_description_hotel = htmlspecialchars($_POST['n_description_hotel']);
+    $id_galerie = htmlspecialchars($_POST['id_galerie']);
+    $n_titre_galerie = htmlspecialchars($_POST['n_titre_galerie']);+
     $image = htmlspecialchars($_POST['n_image']);
     $old_image = htmlspecialchars($_POST['old_image']);
     //grabbing the picture
     $file = $_FILES['n_image']['name'];
     $file_loc = $_FILES['n_image']['tmp_name'];
-    $folder="../assets/img/hotel/";
+    $folder="../assets/img/galerie/";
     $new_file_name = strtolower($file);
     $final_file=str_replace(' ','-',$new_file_name);
 
@@ -83,19 +79,15 @@ if(isset($_POST['modifier_hotel'])){
         $pic = $image;
     }
 
-    $sql = "UPDATE HOTEL SET 
-        \"NOM_HOTEL\" = '$n_nom_hotel',
-        \"NOTE_HOTEL\" = '$n_note_hotel',
-        \"ADRESSE_HOTEL\" = '$n_adresse_hotel',
-        \"CONTACT_HOTEL\" = '$n_contact_hotel',
-        \"DESCRIPTION_HOTEL\" = '$n_description_hotel',
-        \"IMAGE_HOTEL\" = '$pic'
-        WHERE \"ID_HOTEL\" = '$id_hotel' ";
+    $sql = "UPDATE GALERIE SET 
+        \"TITRE_GALERIE\" = '$n_titre_galerie',
+        \"IMAGE_GALERIE\" = '$pic'
+        WHERE \"ID_GALERIE\" = '$id_galerie' ";
 
     $query = $dbh->prepare($sql);
     
     if ($query->execute()) {
-        echo '<script>window.location.href="/ganjamah/liste/hotel.php"</script>';
+        echo '<script>window.location.href="/ganjamah/liste/galerie.php"</script>';
     } else {
         echo "Error";
     }
