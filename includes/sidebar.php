@@ -48,6 +48,17 @@
 							</li>
 
 								<li> 
+									<a href="/ganjamah/liste/galerie.php"><i class="fa fa-street-view"></i> <span>Galerie</span></a>
+								</li>
+
+							<li class="menu-title"> 
+								<span></span>
+							</li>
+							<li class="menu-title"> 
+								<span></span>
+							</li>
+
+								<li> 
 									<a href="/ganjamah/liste/blog.php"><i class="fa fa-newspaper"></i> <span>Blog</span></a>
 								</li>
 
