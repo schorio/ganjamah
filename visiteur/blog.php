@@ -1,3 +1,5 @@
+<?php include_once('../includes/config.php'); ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -42,101 +44,35 @@
                 </div>
 
                 <div class = "blog-row">
-                    <div class = "blog-item my-2 shadow">
-                        <div class = "blog-item-top">
-                            <img src = "images/blog-1.jpg" alt = "blog">
-                            <span class = "blog-date">oct 28, 2021</span>
-                        </div>
-                        <div class = "blog-item-bottom">
-                            <span>travel | john doe</span>
-                            <a href = "#">Lorem, ipsum dolor sit amet consectetur adipisicing elit?</a>
-                            <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptatem nulla harum accusantium tempora dicta quas quod id, repellat temporibus illo libero explicabo laboriosam.</p>
-                        </div>
-                    </div>
+
+                    <?php
+
+                        $sql = "SELECT * from blog";
+
+                        $query = $dbh->prepare($sql);
+                        $query->execute();
+
+                        while ($row = $query->fetch(PDO::FETCH_ASSOC))
+                        {	
+                                    
+                    ?>
 
                     <div class = "blog-item my-2 shadow">
                         <div class = "blog-item-top">
-                            <img src = "images/blog-2.jpg" alt = "blog">
-                            <span class = "blog-date">oct 28, 2021</span>
+                            <img src = "/ganjamah/assets/img/blog/<?php echo $row['IMAGE_BLOG']; ?>" alt = "blog">
+                            <span class = "blog-date"><?php echo $row['DATE_BLOG']; ?></span>
                         </div>
                         <div class = "blog-item-bottom">
-                            <span>travel | john doe</span>
-                            <a href = "#">Lorem, ipsum dolor sit amet consectetur adipisicing elit?</a>
-                            <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptatem nulla harum accusantium tempora dicta quas quod id, repellat temporibus illo libero explicabo laboriosam.</p>
+                            <span><?php echo $row['DOMAINE_BLOG']; ?> | <?php echo $row['AUTEUR_BLOG']; ?></span>
+                            <a href = "#"><?php echo $row['TITRE_BLOG']; ?></a>
+                            <p class = "text"><?php echo $row['CONTENUE_BLOG']; ?></p>
                         </div>
                     </div>
 
-                    <div class = "blog-item my-2 shadow">
-                        <div class = "blog-item-top">
-                            <img src = "images/blog-3.jpg" alt = "blog">
-                            <span class = "blog-date">oct 28, 2021</span>
-                        </div>
-                        <div class = "blog-item-bottom">
-                            <span>travel | john doe</span>
-                            <a href = "#">Lorem, ipsum dolor sit amet consectetur adipisicing elit?</a>
-                            <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptatem nulla harum accusantium tempora dicta quas quod id, repellat temporibus illo libero explicabo laboriosam.</p>
-                        </div>
-                    </div>
+                    <?php
+                        }
+                    ?>
 
-                    <div class = "blog-item my-2 shadow">
-                        <div class = "blog-item-top">
-                            <img src = "images/blog-4.jpg" alt = "blog">
-                            <span class = "blog-date">oct 28, 2021</span>
-                        </div>
-                        <div class = "blog-item-bottom">
-                            <span>travel | john doe</span>
-                            <a href = "#">Lorem, ipsum dolor sit amet consectetur adipisicing elit?</a>
-                            <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptatem nulla harum accusantium tempora dicta quas quod id, repellat temporibus illo libero explicabo laboriosam.</p>
-                        </div>
-                    </div>
-
-                    <div class = "blog-item my-2 shadow">
-                        <div class = "blog-item-top">
-                            <img src = "images/blog-5.jpg" alt = "blog">
-                            <span class = "blog-date">oct 28, 2021</span>
-                        </div>
-                        <div class = "blog-item-bottom">
-                            <span>travel | john doe</span>
-                            <a href = "#">Lorem, ipsum dolor sit amet consectetur adipisicing elit?</a>
-                            <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptatem nulla harum accusantium tempora dicta quas quod id, repellat temporibus illo libero explicabo laboriosam.</p>
-                        </div>
-                    </div>
-
-                    <div class = "blog-item my-2 shadow">
-                        <div class = "blog-item-top">
-                            <img src = "images/blog-6.jpg" alt = "blog">
-                            <span class = "blog-date">oct 28, 2021</span>
-                        </div>
-                        <div class = "blog-item-bottom">
-                            <span>travel | john doe</span>
-                            <a href = "#">Lorem, ipsum dolor sit amet consectetur adipisicing elit?</a>
-                            <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptatem nulla harum accusantium tempora dicta quas quod id, repellat temporibus illo libero explicabo laboriosam.</p>
-                        </div>
-                    </div>
-
-                    <div class = "blog-item my-2 shadow">
-                        <div class = "blog-item-top">
-                            <img src = "images/blog-7.jpg" alt = "blog">
-                            <span class = "blog-date">oct 28, 2021</span>
-                        </div>
-                        <div class = "blog-item-bottom">
-                            <span>travel | john doe</span>
-                            <a href = "#">Lorem, ipsum dolor sit amet consectetur adipisicing elit?</a>
-                            <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptatem nulla harum accusantium tempora dicta quas quod id, repellat temporibus illo libero explicabo laboriosam.</p>
-                        </div>
-                    </div>
-
-                    <div class = "blog-item my-2 shadow">
-                        <div class = "blog-item-top">
-                            <img src = "images/blog-8.jpg" alt = "blog">
-                            <span class = "blog-date">oct 28, 2021</span>
-                        </div>
-                        <div class = "blog-item-bottom">
-                            <span>travel | john doe</span>
-                            <a href = "#">Lorem, ipsum dolor sit amet consectetur adipisicing elit?</a>
-                            <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptatem nulla harum accusantium tempora dicta quas quod id, repellat temporibus illo libero explicabo laboriosam.</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
