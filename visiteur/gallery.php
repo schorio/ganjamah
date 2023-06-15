@@ -1,3 +1,5 @@
+<?php include_once('../includes/config.php'); ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -37,60 +39,30 @@
         <div id = "gallery" class = "py-4">
             <div class = "container">
                 <div class = "gallery-row">
+
+                    <?php
+
+                        $sql = "SELECT * from galerie";
+
+                        $query = $dbh->prepare($sql);
+                        $query->execute();
+
+                        while ($row = $query->fetch(PDO::FETCH_ASSOC))
+                        {	
+                                    
+                    ?>
+
                     <div class = "gallery-item shadow">
-                        <img src = "images/gallery-1.jpg" alt = "gallery img">
+                        <img src = "/ganjamah/assets/img/galerie/<?php echo $row['IMAGE_GALERIE']; ?>" alt = "gallery img">
                         <span class = "zoom-icon">
                             <i class = "fas fa-search-plus"></i>
                         </span>
                     </div>
-                    <div class = "gallery-item shadow">
-                        <img src = "images/gallery-2.jpg" alt = "gallery img">
-                        <span class = "zoom-icon">
-                            <i class = "fas fa-search-plus"></i>
-                        </span>
-                    </div>
-                    <div class = "gallery-item shadow">
-                        <img src = "images/gallery-3.jpg" alt = "gallery img">
-                        <span class = "zoom-icon">
-                            <i class = "fas fa-search-plus"></i>
-                        </span>
-                    </div>
-                    <div class = "gallery-item shadow">
-                        <img src = "images/gallery-4.jpg" alt = "gallery img">
-                        <span class = "zoom-icon">
-                            <i class = "fas fa-search-plus"></i>
-                        </span>
-                    </div>
-                    <div class = "gallery-item shadow">
-                        <img src = "images/gallery-5.jpg" alt = "gallery img">
-                        <span class = "zoom-icon">
-                            <i class = "fas fa-search-plus"></i>
-                        </span>
-                    </div>
-                    <div class = "gallery-item shadow">
-                        <img src = "images/gallery-6.jpg" alt = "gallery img">
-                        <span class = "zoom-icon">
-                            <i class = "fas fa-search-plus"></i>
-                        </span>
-                    </div>
-                    <div class = "gallery-item shadow">
-                        <img src = "images/gallery-7.jpg" alt = "gallery img">
-                        <span class = "zoom-icon">
-                            <i class = "fas fa-search-plus"></i>
-                        </span>
-                    </div>
-                    <div class = "gallery-item shadow">
-                        <img src = "images/gallery-8.jpg" alt = "gallery img">
-                        <span class = "zoom-icon">
-                            <i class = "fas fa-search-plus"></i>
-                        </span>
-                    </div>
-                    <div class = "gallery-item shadow">
-                        <img src = "images/gallery-9.jpg" alt = "gallery img">
-                        <span class = "zoom-icon">
-                            <i class = "fas fa-search-plus"></i>
-                        </span>
-                    </div>
+
+                    <?php
+                        }
+                    ?>
+
                 </div>
             </div>
         </div>
