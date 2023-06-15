@@ -38,13 +38,13 @@ if(isset($_POST['ajouter_galerie'])){
 // ==============================================
 
 
-if(isset($_POST['supprimer_hotel'])){
+if(isset($_POST['supprimer_galerie'])){
     // sql to delete a record
-    $supprimer_hotel_id = $_POST['supprimer_hotel_id'];
-    $sql = "DELETE FROM HOTEL WHERE \"ID_HOTEL\"='$supprimer_hotel_id' ";
+    $supprimer_galerie_id = $_POST['supprimer_galerie_id'];
+    $sql = "DELETE FROM GALERIE WHERE \"ID_GALERIE\"='$supprimer_galerie_id' ";
     $query = $dbh->prepare($sql);
     if ($query->execute()) {
-        echo '<script>window.location.href="/ganjamah/liste/hotel.php"</script>';
+        echo '<script>window.location.href="/ganjamah/liste/galerie.php"</script>';
     } else {
         echo "Error";
     }
