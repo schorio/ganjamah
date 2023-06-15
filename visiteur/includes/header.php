@@ -21,9 +21,9 @@
                 <li class="nav-item">
                     <a href="/ganjamah/visiteur/blog.php" class="nav-link">Blog</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="/ganjamah/visiteur/about.php" class="nav-link">a propos</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a href="/ganjamah/visiteur/contact.php" class="nav-link">Contact</a>
                 </li>

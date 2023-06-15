@@ -37,6 +37,7 @@ button, input[type = "submit"]{
     opacity: 0.9;
     line-height: 1.6;
     letter-spacing: 1px;
+    word-wrap: break-word;
 }
 .form-control{
     width: 100%;
@@ -82,7 +83,30 @@ button, input[type = "submit"]{
 img{
     width: 100%;
     display: block;
+    height: 100%;
 }
+
+.gallery-item img{
+    width: 100%;
+    display: block;
+    height: 100%;
+    max-height: 250px;
+}
+
+.featured-item img{
+    width: 100%;
+    display: block;
+    height: 100%;
+    max-height: 250px;
+}
+
+.blog-item img{
+    width: 100%;
+    display: block;
+    height: 100%;
+    max-height: 230px;
+}
+
 .title-wrap{
     text-align: center;
     padding: 1.4rem 0;

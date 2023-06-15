@@ -751,6 +751,7 @@ header.header-sm{
     -webkit-transition: var(--trans);
     -o-transition: var(--trans);
     transition: var(--trans);
+    max-width: 400px;
 }
 .blog-item-top{
     position: relative;
