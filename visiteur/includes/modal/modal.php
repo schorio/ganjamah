@@ -25,6 +25,12 @@
 				      		<div class="form-group">
 				      			<input name="contact_reservation" type="text" class="form-control" placeholder="Contact">
 				      		</div>
+							  <div class="form-group">
+				      			<input name="adresse_reservation" type="text" class="form-control" placeholder="Adresse">
+				      		</div>
+							  <div class="form-group">
+				      			<input name="cin_reservation" type="number" class="form-control" placeholder="Numero CIN">
+				      		</div>
 				      		<div class="form-group">
 								<input name="place_reservation" id="input_1" type="number" class="form-control" placeholder="Nombre de personne (<?php echo $row['PLACE_CIRCUIT']; ?> dispo)" min="1" max="<?php echo $row['PLACE_CIRCUIT']; ?>">
 								<input id="input_11" type="hidden" class="form-control" value="<?php echo $row['PRIX_CIRCUIT']; ?>">
