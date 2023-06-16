@@ -3,8 +3,8 @@
     if(isset($_POST['ajouter_reservation'])){    
         
         try {
-        $sql = "INSERT INTO reservation (\"ID_RES\", \"NOM_RES\", \"CONTACT_RES\", \"ADRESSE_RES\", \"CIN_RES\", \"CIRCUIT_RES\", \"PLACE_RES\", \"DATE_RES\") 
-                        VALUES  (RESERVATION_SEQUENCE.nextval, :nom_reservation,  :contact_reservation, :adresse_reservation, :cin_reservation,  :circuit_reservation,  :place_reservation, TO_DATE(:date_reservation, 'YYYY-MM-DD'))";
+        $sql = "INSERT INTO reservation (\"ID_RES\", \"NOM_RES\", \"CONTACT_RES\", \"ADRESSE_RES\", \"CIN_RES\", \"CIRCUIT_RES\", \"PLACE_RES\", \"STATUT_RES\", \"DATE_RES\") 
+                        VALUES  (RESERVATION_SEQUENCE.nextval, :nom_reservation,  :contact_reservation, :adresse_reservation, :cin_reservation,  :circuit_reservation,  :place_reservation, :statut_reservation, TO_DATE(:date_reservation, 'YYYY-MM-DD'))";
             $query = $dbh->prepare($sql);
 
             $aujourdhui = date("Y-m-d");
@@ -15,6 +15,7 @@
             $cin_reservation = htmlspecialchars($_POST['cin_reservation']);
             $circuit_reservation = htmlspecialchars($_POST['circuit_reservation']);
             $place_reservation = htmlspecialchars($_POST['place_reservation']);
+            $statut_reservation = "false";
             $date_reservation = htmlspecialchars($aujourdhui);
 
             $query->bindParam(':nom_reservation',$nom_reservation);
@@ -23,6 +24,7 @@
             $query->bindParam(':cin_reservation',$cin_reservation);
             $query->bindParam(':circuit_reservation',$circuit_reservation);
             $query->bindParam(':place_reservation',$place_reservation);
+            $query->bindParam(':statut_reservation',$statut_reservation);
             $query->bindParam(':date_reservation',$date_reservation);
 
             if ($query->execute()) {

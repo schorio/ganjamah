@@ -134,12 +134,21 @@
 											<td><?php echo $row['CIRCUIT_RES']; ?></td>
 											<td><?php echo $row['DATE_RES']; ?></td>
 											<td><?php echo $row['PLACE_RES']; ?></td>
-											<td>rien</td>
+											<td>
+												<?php 
+													if ($row['STATUT_RES'] == "true"){ 
+														echo "<span class='text-muted'><i class='fa fa-check-circle m-r-5'></i> Payer</span>"; 
+													}
+													else {
+														echo "<i class='fa fa-times-circle m-r-5'></i><span> Non Payer</span>";
+													}
+												?>
+											</td>
                                             <td class="text-right">
 												<div class="dropdown dropdown-action">
 													<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 													<div class="dropdown-menu dropdown-menu-right">
-														<a class="dropdown-item" href="#"><i class="fa fa-trash m-r-5"></i> Valider</a>
+														<a class="dropdown-item" href="#"><i class="fa fa-check-square m-r-5"></i> Valider</a>
 														<a class="dropdown-item" href="#" data-toggle="modal" data-target="#annuler_reservation_<?php echo $row['ID_RES']; ?>"><i class="fa fa-trash m-r-5"></i> Annuler</a>
 													</div>
 												</div>
