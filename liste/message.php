@@ -111,36 +111,38 @@
 									<?php
 
 										$sql = "SELECT * FROM message ORDER BY date_mess DESC";
+										
 										$query = $dbh->prepare($sql);
 										$query->execute();
-										$results=$query->fetchAll(PDO::FETCH_OBJ);
-										$cnt=1;
-										if($query->rowCount() > 0)
-										{
-											foreach($results as $row)
-											{	
+
+										while ($row = $query->fetch(PDO::FETCH_ASSOC))
+										{	
+											$DATE_MESS = date('Y-m-d', strtotime($row['DATE_MESS']));
 
 									?>	
 										<tr>
 											<td>
 												<h2 class="table-avatar">
-													<a href=""> <?php echo htmlentities($row->destinateur_mess); ?><span><?php echo htmlentities($row->email_mess); ?></span></a>
+													<a href="">
+														<?php echo $row['DESTINATEUR_MESS']; ?>
+														<span><?php echo $row['EMAIL_MESS']; ?></span>
+													</a>
 												</h2>
 											</td>														
-											<td><?php echo htmlentities($row->email_mess); ?></td>
-											<td><?php echo htmlentities($row->date_mess); ?></td>
-											<td><?php echo htmlentities($row->contenue_mess); ?></td>
+											<td><?php echo $row['EMAIL_MESS']; ?></td>
+											<td><?php echo $DATE_MESS; ?></td>
+											<td><?php echo $row['CONTENUE_MESS']; ?></td>
 											<td class="text-right">
 												<div class="dropdown dropdown-action">
 													<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 													<div class="dropdown-menu dropdown-menu-right">
-														<a class="dropdown-item" href="#" data-toggle="modal" data-target="#supprimer_message_<?php echo htmlentities($row->id_mess); ?>"><i class="fa fa-trash m-r-5"></i> Supprimer</a>
+														<a class="dropdown-item" href="#" data-toggle="modal" data-target="#supprimer_message_<?php echo $row['ID_MESS']; ?>"><i class="fa fa-trash m-r-5"></i> Supprimer</a>
 													</div>
 												</div>
 											</td>
 										</tr>
 
-                                        <div id="supprimer_message_<?php echo htmlentities($row->id_mess); ?>" class="modal custom-modal fade" role="dialog">
+                                        <div id="supprimer_message_<?php echo $row['ID_MESS']; ?>" class="modal custom-modal fade" role="dialog">
                                             <div class="modal-dialog modal-dialog-centered">
                                                 <form method="post">
                                                     <!-- Modal content-->
@@ -152,13 +154,13 @@
                                                                     <p>Voulez vous vraiment supprimer ce message ?</p>
                                                             </div>
                                                             <div class="modal-btn delete-action">
-                                                                <input type="hidden" name="supprimer_mess_id" value="<?php echo htmlentities($row->id_mess); ?>">
+                                                                <input type="hidden" name="supprimer_mess_id" value="<?php echo $row['ID_MESS']; ?>">
                                                                 <div class="row">
                                                                     <div class="col-6">
                                                                         <a href="javascript:void(0);" data-dismiss="modal" class="btn btn-primary cancel-btn">Annuler</a>
                                                                     </div>
                                                                     <div class="col-6">
-                                                                        <button type="submit" name="supprimer_mess" class="btn btn-primary continue-btn">Supprimer</button>
+                                                                        <button type="submit" name="supprimer_message" class="btn btn-primary continue-btn">Supprimer</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -170,10 +172,10 @@
 											
 									<?php
 						
-												}
-										$cnt +=1; 
-											}
-									?>	
+										include("../includes/modals/blog/supprimer_blog.php");
+
+										}
+									?>		
 									</tbody>
 
 								</table>
