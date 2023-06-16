@@ -24,10 +24,19 @@
             $query->bindParam(':circuit_reservation',$circuit_reservation);
             $query->bindParam(':place_reservation',$place_reservation);
             $query->bindParam(':date_reservation',$date_reservation);
-            $query->execute();
-            
-            echo "<script>window.location.href='/ganjamah/index.php';</script>";
-        
+
+            if ($query->execute()) {
+                $sql_1 = "UPDATE CIRCUIT SET \"PLACE_CIRCUIT\"=\"PLACE_CIRCUIT\"-'$place_reservation' WHERE \"ID_CIRCUIT\" = '$circuit_reservation' ";
+                $query_1 = $dbh->prepare($sql_1);
+                if ($query_1->execute()) {
+                    echo "<script>window.location.href='/ganjamah/index.php';</script>";
+                } else {
+                    echo "Error";
+                }
+            } else {
+                echo "Error";
+            }
+                    
         } catch (PDOException $e) {
             echo "Error: ".$e->getMessage();
         }

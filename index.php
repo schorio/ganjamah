@@ -55,7 +55,7 @@
 
                 <?php
 
-                    $sql = "SELECT * from circuit";
+                    $sql = "SELECT * from circuit where \"PLACE_CIRCUIT\">0";
 
                     $query = $dbh->prepare($sql);
                     $query->execute();
