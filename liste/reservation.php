@@ -159,6 +159,8 @@
                                                             </div>
                                                             <div class="modal-btn delete-action">
                                                                 <input type="hidden" name="annuler_res_id" value="<?php echo $row['ID_RES']; ?>">
+																<input type="hidden" name="circuit_reservation" value="<?php echo $row['CIRCUIT_RES']; ?>">
+																<input type="hidden" name="place_reservation" value="<?php echo $row['PLACE_RES']; ?>">
                                                                 <div class="row">
                                                                     <div class="col-6">
                                                                         <a href="javascript:void(0);" data-dismiss="modal" class="btn btn-primary cancel-btn">Non</a>

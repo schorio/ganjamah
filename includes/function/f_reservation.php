@@ -49,10 +49,18 @@
     if(isset($_POST['annuler_reservation'])){
         // sql to delete a record
         $annuler_res_id = $_POST['annuler_res_id'];
+        $circuit_reservation = $_POST['circuit_reservation'];
+        $place_reservation = $_POST['place_reservation'];
         $sql = "DELETE FROM RESERVATION WHERE \"ID_RES\"='$annuler_res_id' ";
         $query = $dbh->prepare($sql);
         if ($query->execute()) {
-            echo '<script>window.location.href="/ganjamah/liste/reservation.php"</script>';
+            $sql_1 = "UPDATE CIRCUIT SET \"PLACE_CIRCUIT\"=\"PLACE_CIRCUIT\"+'$place_reservation' WHERE \"ID_CIRCUIT\" = '$circuit_reservation' ";
+            $query_1 = $dbh->prepare($sql_1);
+            if ($query_1->execute()) {
+                echo '<script>window.location.href="/ganjamah/liste/reservation.php"</script>';
+            } else {
+                echo "Error";
+            }
         } else {
             echo "Error";
         }
