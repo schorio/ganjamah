@@ -29,11 +29,12 @@
 
     }
 
-    if(isset($_POST['supprimer_mess'])){
+    if(isset($_POST['supprimer_message'])){
         // sql to delete a record
         $supprimer_mess_id = $_POST['supprimer_mess_id'];
-        $sql = "DELETE FROM message WHERE id_mess='$supprimer_mess_id' ";
-        if ($conn->query($sql) === TRUE) {
+        $sql = "DELETE FROM MESSAGE WHERE \"ID_MESS\"='$supprimer_mess_id' ";
+        $query = $dbh->prepare($sql);
+        if ($query->execute()) {
             echo '<script>window.location.href="/ganjamah/liste/message.php"</script>';
         } else {
             echo "Error";

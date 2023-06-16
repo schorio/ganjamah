@@ -171,10 +171,9 @@
                                         </div>
 											
 									<?php
-						
-										include("../includes/modals/blog/supprimer_blog.php");
 
 										}
+									
 									?>		
 									</tbody>
 
