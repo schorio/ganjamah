@@ -125,10 +125,10 @@
                                             <td>
                                                 <h2 class="table-avatar">
                                                     <a href="" class="avatar"><img alt="image" src="/ganjamah/assets/img/user.jpg"></a>
-                                                    <a href=""><?php echo $row['NOM_RES']; ?><span><?php echo $row['CIN_RES']; ?></span></a>
+                                                    <a href=""><?php echo $row['NOM_RES']; ?><span>cin : <?php echo $row['CIN_RES']; ?></span></a>
                                                 </h2>
                                             </td>			
-											<td><?php echo $row['CONTACT_RES']; ?></td>
+											<td>0<?php echo $row['CONTACT_RES']; ?></td>
 											<td><?php echo $row['ADRESSE_RES']; ?></td>										
 											<td><?php echo $row['CIRCUIT_RES']; ?></td>
 											<td><?php echo $row['DATE_RES']; ?></td>
