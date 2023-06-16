@@ -2,7 +2,7 @@
 	session_start();
 	error_reporting(0);
 	include_once('../includes/config.php');
-	include_once('../includes/function/f_rervation.php');
+	include_once('../includes/function/f_reservation.php');
 	if(strlen($_SESSION['userlogin'])==0){
 		header('location: ../login.php');
 	}
@@ -18,7 +18,7 @@
 		<meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
         <meta name="author" content="Dreamguys - Bootstrap Admin Template">
         <meta name="robots" content="noindex, nofollow">
-        <title>Rervation</title>
+        <title>Reservation</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="../assets/img/logo.png">
@@ -72,10 +72,10 @@
 					<div class="page-header">
 						<div class="row align-items-center">
 							<div class="col">
-								<h3 class="page-title">Rervation</h3>
+								<h3 class="page-title">Reservation</h3>
 								<ul class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.php">Listes</a></li>
-									<li class="breadcrumb-item active">Listes des rervations</li>
+									<li class="breadcrumb-item active">Listes des reservations</li>
 								</ul>
 							</div>
 						</div>
@@ -107,6 +107,7 @@
 										<th>Date</th>
 										<th>Place</th>
 										<th>Statut</th>
+										<th class="text-right no-sort">Action</th>
 										<!-- </tr> -->
 									</thead>
 									<tbody>
@@ -133,10 +134,45 @@
 											<td><?php echo $row['CIRCUIT_RES']; ?></td>
 											<td><?php echo $row['DATE_RES']; ?></td>
 											<td><?php echo $row['PLACE_RES']; ?></td>
-                                            <td>
-                                                <button class="btn btn-outline-info" href=""><i class="fa fa-trash m-r-5"></i> Payer</button>
-                                            </td>
+											<td>rien</td>
+                                            <td class="text-right">
+												<div class="dropdown dropdown-action">
+													<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+													<div class="dropdown-menu dropdown-menu-right">
+														<a class="dropdown-item" href="#"><i class="fa fa-trash m-r-5"></i> Valider</a>
+														<a class="dropdown-item" href="#" data-toggle="modal" data-target="#annuler_reservation_<?php echo $row['ID_RES']; ?>"><i class="fa fa-trash m-r-5"></i> Annuler</a>
+													</div>
+												</div>
+											</td>
 										</tr>
+
+										<div id="annuler_reservation_<?php echo $row['ID_RES']; ?>" class="modal custom-modal fade" role="dialog">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <form method="post">
+                                                    <!-- Modal content-->
+                                                    <div class="modal-content">
+                                                        <div class="modal-body-delete">
+                                                            <div class="form-header">
+                                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                    <h3>Annuler une reservation</h3>
+                                                                    <p>Voulez vous vraiment annuler cette reservation ?</p>
+                                                            </div>
+                                                            <div class="modal-btn delete-action">
+                                                                <input type="hidden" name="annuler_res_id" value="<?php echo $row['ID_RES']; ?>">
+                                                                <div class="row">
+                                                                    <div class="col-6">
+                                                                        <a href="javascript:void(0);" data-dismiss="modal" class="btn btn-primary cancel-btn">Non</a>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <button type="submit" name="annuler_reservation" class="btn btn-primary continue-btn">Annuler</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
 											
                                     <?php
                                     
