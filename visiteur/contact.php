@@ -1,3 +1,7 @@
+<?php 
+    include_once('../includes/config.php');
+    include_once("../includes/function/f_message.php");
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -27,7 +31,6 @@
             <div class = "container">
                 <div class = "header-title">
                     <h1>Contact</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus rerum maxime enim odit illum in molestias beatae doloremque, ratione optio.</p>
                 </div>
             </div>
         </header>
@@ -37,17 +40,16 @@
         <section id = "contact" class = "py-4">
             <div class = "container">
                 <div class = "title-wrap">
-                    <span class = "sm-title">get in touch with us</span>
-                    <h2 class = "lg-title">contact us</h2>
+                    <h2 class = "lg-title">contacter nous</h2>
                 </div>
 
                 <div class = "contact-row">
                     <div class = "contact-left">
-                        <form class = "contact-form">
-                            <input type = "text" class = "form-control" placeholder="Your name">
-                            <input type = "email" class = "form-control" placeholder="Your email">
-                            <textarea rows = "4" class = "form-control" placeholder="Your message" style = "resize: none;"></textarea>
-                            <input type = "submit" class = "btn" value = "Send message">
+                        <form method="POST" enctype="multipart/form-data" class="contact-form">
+                            <input name="destinateur_message" class="form-control" placeholder="Votre nom" type="text">
+                            <input name="email_message" class="form-control" placeholder="Votre email" type="text">
+                            <textarea name="contenue_message" rows="5" class="form-control" placeholder="Votre message" style="resize: none;" type="text"></textarea>
+                            <button type="submit" name="envoyer_message" class="btn">Envoyer</button>
                         </form>
                     </div>
                     <div class = "contact-right my-2">
@@ -57,7 +59,7 @@
                             </span>
                             <div>
                                 <span>Phone</span>
-                                <p class = "text">+01-584-886-009</p>
+                                <p class = "text">+261 34 69 666 69</p>
                             </div>
                         </div>
                         <div class = "contact-item">
@@ -66,7 +68,7 @@
                             </span>
                             <div>
                                 <span>Address</span>
-                                <p class = "text">102 East 22nd Street, NY</p>
+                                <p class = "text">401 Majunga, Madagascar</p>
                             </div>
                         </div>
                         <div class = "contact-item">
@@ -75,7 +77,7 @@
                             </span>
                             <div>
                                 <span>Message</span>
-                                <p class = "text">info@GanjaMah..com</p>
+                                <p class = "text">info@ganjamah.com</p>
                             </div>
                         </div>
                     </div>
