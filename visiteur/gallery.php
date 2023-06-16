@@ -80,7 +80,7 @@
                 <button type = "button" id = "next-btn" class = "flex">
                     <i class = "fas fa-chevron-right"></i>
                 </button>
-                <img src = "images/gallery-1.jpg">
+                <img src = "">
             </div>
         </div>
         <!-- end of img modal -->
@@ -105,36 +105,38 @@
                 galleryItem.addEventListener('click', () => {
                     imgModalDiv.style.display = "block";
                     let imgSrc = galleryItem.querySelector('img').src;
-                    imgIndex = parseInt(imgSrc.split("-")[1].substring(0, 1));
-                    showImageContent(imgIndex);
+                    showImageContent(imgSrc);
                 })
             });
 
-            // next click
-            nextBtn.addEventListener('click', () => {
-                imgIndex++;
-                if(imgIndex > allGalleryItem.length){
-                    imgIndex = 1;
-                }
-                showImageContent(imgIndex);
-            });
-
-            // previous click
-            prevBtn.addEventListener('click', () => {
-                imgIndex--;
-                if(imgIndex <= 0){
-                    imgIndex = allGalleryItem.length;
-                }
-                showImageContent(imgIndex);
-            });
-
-            function showImageContent(index){
-                imgModalDiv.querySelector('#img-modal img').src = `images/gallery-${index}.jpg`;
+            function showImageContent(img_src){
+                imgModalDiv.querySelector('#img-modal img').src = img_src;
             }
 
             modalCloseBtn.addEventListener('click', () => {
                 imgModalDiv.style.display = "none";
             })
+
+
+            // next click
+            nextBtn.addEventListener('click', () => {
+                imgIndex++;
+                if (imgIndex >= allGalleryItem.length) {
+                    imgIndex = 0;
+                }
+                let imgSrc = allGalleryItem[imgIndex].querySelector('img').src;
+                showImageContent(imgSrc);
+            });
+
+            // previous click
+            prevBtn.addEventListener('click', () => {
+                imgIndex--;
+                if (imgIndex < 0) {
+                    imgIndex = allGalleryItem.length - 1;
+                }
+                let imgSrc = allGalleryItem[imgIndex].querySelector('img').src;
+                showImageContent(imgSrc);
+            });
         </script>
     </body>
 </html>
