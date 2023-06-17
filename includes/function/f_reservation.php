@@ -42,9 +42,29 @@
         } catch (PDOException $e) {
             echo "Error: ".$e->getMessage();
         }
-
-
         
+    }
+
+
+    if(isset($_POST['valider'])){    
+        
+        try {
+            $id_valider = $_POST['id_valider'];
+            $validation = $_POST['validation'];
+
+            $sql = "UPDATE RESERVATION SET \"STATUT_RES\" = '$validation' WHERE \"ID_RES\" = '$id_valider' ";
+            $query = $dbh->prepare($sql);
+
+            if ($query->execute()) {
+                echo "<script>window.location.href='/ganjamah/liste/reservation.php';</script>";
+
+            } else {
+                echo "Error";
+            }
+                    
+        } catch (PDOException $e) {
+            echo "Error: ".$e->getMessage();
+        }
     }
     
 

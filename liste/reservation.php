@@ -145,13 +145,17 @@
 												?>
 											</td>
                                             <td class="text-right">
-												<div class="dropdown dropdown-action">
-													<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-													<div class="dropdown-menu dropdown-menu-right">
-														<a class="dropdown-item" href="#"><i class="fa fa-check-square m-r-5"></i> Valider</a>
-														<a class="dropdown-item" href="#" data-toggle="modal" data-target="#annuler_reservation_<?php echo $row['ID_RES']; ?>"><i class="fa fa-trash m-r-5"></i> Annuler</a>
+												<form method="POST" enctype="multipart/form-data">
+													<input name="id_valider" type="hidden" value="<?php echo $row['ID_RES']; ?>">
+													<input name="validation" type="hidden" value="true">
+													<div class="dropdown dropdown-action">
+														<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+														<div class="dropdown-menu dropdown-menu-right">
+															<button type="submit" name="valider" class="dropdown-item"><i class="fa fa-check-square m-r-5"></i> Valider</button>
+															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#annuler_reservation_<?php echo $row['ID_RES']; ?>"><i class="fa fa-trash m-r-5"></i> Annuler</a>
+														</div>
 													</div>
-												</div>
+												</form>
 											</td>
 										</tr>
 
