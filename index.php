@@ -74,7 +74,7 @@
                         </span>
                         <div>
                             <p class="text"><?php echo $row['DESCRIPTION_CIRCUIT']; ?></p>
-                            <p class="text"><?php echo $row['DUREE_CIRCUIT']; ?></p>
+                            <p class="text"><?php echo $row['DUREE_CIRCUIT']; ?> jours</p>
                         </div>
                         <div>
                             <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModalCenter_<?php echo $row['ID_CIRCUIT']; ?>">

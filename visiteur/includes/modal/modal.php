@@ -9,9 +9,7 @@
 		      </div>
 		      <div class="row">
 					<div class=" col-md bg-image promo-img" style="background-image: url('/ganjamah/assets/img/circuit/<?php echo $row['IMAGE_CIRCUIT']; ?>');">
-						<span class="price"><?php echo $row['LOCALISATION_CIRCUIT']; ?></span>
-						<!-- <span ><php echo $row['DUREE_CIRCUIT']; ?></span><br>
-						<span ><php echo $row['PRIX_CIRCUIT']; ?></span><br> -->
+						<h3 class="price"><span class="text-muted"><?php echo number_format($row['PRIX_CIRCUIT'], 0, ',', ' '); ?> Ar</span> pour une personne</h3>
 					</div>
 				    <!-- <div class="col-md-1 divider"></div> -->
 				    <div class="col-md reservation">

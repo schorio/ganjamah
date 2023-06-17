@@ -7175,8 +7175,7 @@ textarea.form-control {
 }
 
 .price {
-  top: 20px;
-  left: 20px;
+  left: 40px;
   position: absolute;
   color: #fff; 
 }
