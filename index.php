@@ -55,7 +55,7 @@
 
                 <?php
 
-                    $sql = "SELECT * from circuit where \"PLACE_CIRCUIT\">0";
+                    $sql = "SELECT * from circuit where \"PLACE_CIRCUIT\">0 ORDER BY \"PLACE_CIRCUIT\" ASC";
 
                     $query = $dbh->prepare($sql);
                     $query->execute();
@@ -212,12 +212,12 @@
     <!-- video section -->
     <section id="video">
         <div class="video-wrapper flex">
-            <video loop>
-                <source src="/ganjamah/visiteur/videos/video-section.mp4" type="video/mp4">
+            <video loop autoplay muted>
+                <source src="/ganjamah/visiteur/videos/video-section.mp4" type="video/mp4" >
             </video>
-            <button type="button" id="play-btn">
+            <!-- <button type="button" id="play-btn">
                 <i class="fas fa-play"></i>
-            </button>
+            </button> -->
         </div>
     </section>
     <!-- end of video section -->
@@ -228,21 +228,26 @@
 
     <!-- js -->
     <script src="/ganjamah/visiteur/js/script.js"></script>
+
     <script>
         // play/pause video
-        let video = document.querySelector('.video-wrapper video');
-        document.getElementById('play-btn').addEventListener('click', () => {
-            if (video.paused) {
-                video.play();
-            } else {
-                video.pause();
-            }
-        });
+        // let video = document.querySelector('.video-wrapper video');
+        // document.getElementById('play-btn').addEventListener('click', () => {
+        //     if (video.paused) {
+        //         video.play();
+        //     } else {
+        //         video.pause();
+        //     }
+        // });
+
+        
     </script>
+
     <script src="/ganjamah/visiteur/includes/modal/js/jquery.min.js"></script>
     <script src="/ganjamah/visiteur/includes/modal/js/popper.js"></script>
     <script src="/ganjamah/visiteur/includes/modal/js/bootstrap.min.js"></script>
     <script src="/ganjamah/visiteur/includes/modal/js/main.js"></script>
+    <script src="/ganjamah/visiteur/includes/js/index.js"></script>
     <script>
         $(document).ready(function(){
             $("#input_1, #input_11").on("input", function(){
