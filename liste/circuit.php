@@ -127,7 +127,7 @@
 								<div>
 									<h4 class="user-name m-t-10 mb-0 text-ellipsis"><?php echo $row['LOCALISATION_CIRCUIT']; ?></h4>
 									<h6 class="user-name text-muted"><?php echo $row['DUREE_CIRCUIT']; ?> jour(s)</h6>
-                                    <h6 class="user-name text-muted"><?php echo $row['PRIX_CIRCUIT']; ?> Ar</h6>
+                                    <h6 class="user-name text-muted"><?php echo number_format($row['PRIX_CIRCUIT'], 0, ',', ' '); ?> Ar</h6>
 								</div>
 							</div>
 						</div>	
