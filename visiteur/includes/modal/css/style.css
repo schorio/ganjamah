@@ -7087,7 +7087,7 @@ textarea.form-control {
   position: relative;
   font-size: 14px;
   color: rgba(255, 255, 255, 0.8);
-  background: var(--gray);
+  background: black;
   /* background: -moz-linear-gradient(45deg, #c859ff 0%, #ffab8c 100%);
   background: -webkit-gradient(left bottom, right top, color-stop(0%, #c859ff), color-stop(100%, #ffab8c));
   background: -webkit-linear-gradient(45deg, #c859ff 0%, #ffab8c 100%);
